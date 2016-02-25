@@ -7,6 +7,33 @@
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ "/css/ie8.css" | prepend: site.baseurl }}" /><![endif]-->
-  <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->
+  <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->{%
+  if page.background-image %}
+  <style>
+  #main > header {
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+  }
+  </style>
+  <!--[if lte IE 9]>
+  <style>
+  #main > header {
+    background-image: url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+  }
+  </style>
+  -->{%
+  endif %}{%
+  if page.style-includes %}{%
+    for include in page.style-includes %}{%
+      assign test1 = include | slice: 0,2 %}{%
+      if test1 == "//" %}
+  <link rel="stylesheet" href="{{ include }}" />{%
+      else %}
+  <link rel="stylesheet" href="{{ include | prepend: site.baseurl }}" />{%
+      endif %}{%
+    endfor %}{%
+  endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>

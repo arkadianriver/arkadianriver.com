@@ -1,0 +1,28 @@
+---
+layout: page
+title: Topics
+layout-options: fullwidth
+id: 2
+excerpt: Just ramblings and musings? Nay, nay
+image: pic01.jpg
+background-image: pic01.jpg
+---
+
+  {% if site.posts %}
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li{% if post.categories contains "featured" %}  class="featured"{% endif %}>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="container">{%
+            if post.categories contains "featured" %}
+            <span class="post-feature">Featured:<br /></span>{%
+            endif %}
+            <span class="post-title">{{ post.title }}<br /></span>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}<br /></span>
+            <span class="post-desc">{{ post.excerpt | truncatewords: 12 }}</span>
+          </div>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% endif %}

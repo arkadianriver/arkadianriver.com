@@ -3,12 +3,25 @@
 
 # Site settings
 title: arkadianriver
-description: bliss flows from a cascade of creativity
-owner: Gary Faircloth # or company name
+description: Flowing creativity &#x2192; Cascading bliss
+owner:
+  name: Gary Faircloth # or company name
+  email: gfair@arkadianriver.com
+  url: http://arkadianriver.com
+  avatar: owner.png
 first_published: 1996 # if migrating another site, the year of your first publish
-# email: your-email@domain.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site
+
+# on landing page
+greeting: |
+  Welcome!  
+  I hope you enjoy my collection
+features-title: Featured topics
+closing-head: Thanks for visiting
+closing-para: Feel free to get in touch. Cheers!
+
+# on all pages
 social:
   twitter: https://twitter.com/arkadianriver
   github: https://github.com/arkadianriver
@@ -51,6 +64,8 @@ social:
   #amazon:
 
 # Build settings
+permalink: /topics/:title.html
 markdown: kramdown
 #sass:
 #  style: compressed
+include: ['page']

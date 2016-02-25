@@ -1,8 +1,21 @@
 <!-- Scripts -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery.scrollex.min.js"></script>
-<script src="js/jquery.scrolly.min.js"></script>
-<script src="js/skel.min.js"></script>
-<script src="js/util.js"></script>
+<script src="{{ '/js/jquery.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/jquery.scrollex.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/jquery.scrolly.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/skel.min.js' | prepend: site.baseurl }}"></script>
+<script src="{{ '/js/util.js' | prepend: site.baseurl }}"></script>
 <!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
-<script src="js/main.js"></script>
+<script src="{{ '/js/main.js' | prepend: site.baseurl }}"></script>{%
+  for include in page.script-includes %}{%
+    assign test1 = include | slice: 0,2 %}{%
+    if test1 == "//" %}
+<script src="{{ include }}"></script>{%
+    else %}
+<script src="{{ include | prepend: site.baseurl }}"></script>{%
+    endif %}{%
+  endfor %}{%
+  if page.script %}
+<script>
+{{ page.script }}
+</script>
+{% endif %}

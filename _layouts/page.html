@@ -1,17 +1,8 @@
 ---
 layout: default
 ---
-<article id="main">
-
-  <header>
-    <h2>{{ page.title }}</h2>
-    <p>Aliquam ut ex ut interdum donec amet imperdiet eleifend</p>
-  </header>
-
-  <section class="wrapper style5">
-    <div class="inner">
+  <section class="wrapper{% if page.layout-options contains 'minihead' %} minihead{% endif %} style5">
+    <div class="inner{% if page.layout-options contains 'fullwidth' %} fullwidth{% endif %}">
       {{ content }}
     </div>
   </section>
-
-</article>
