@@ -1,0 +1,5 @@
+  <header>
+    <h2>{{ page.title }}</h2>
+    {% unless page.layout-options contains 'minihead' %}<p>{{ page.excerpt }}</p>{% endunless %}
+  </header>
+  {% include breadcrumb.html %}

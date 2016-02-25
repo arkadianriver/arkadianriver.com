@@ -16,7 +16,93 @@
 
       {% include header.html %}
 
-      {{ content }}
+        <!-- Banner -->
+          <section id="banner">
+            <div class="inner">
+              <h2>{{ site.title }}</h2>
+              <p>{{ site.description }}</p>
+              <!--
+              <ul class="actions">
+                <li><a href="#" class="button special">Activate</a></li>
+              </ul>
+              -->
+            </div>
+            <a href="#landing_pages" class="more scrolly">Continue</a>
+          </section>
+
+        <!-- One --><!--
+          <section id="one" class="wrapper style1 special">
+            <div class="inner">
+              <header class="major">
+                <h2>{% if site.owner.name %}{{ site.owner.name }}{% else %}{{ site.title }}{% endif %}</h2>
+                <p>{% if site.greeting %}{{ site.greeting | markdownify }}{% else %}{{ site.description | markdownify }}{% endif %}</p>
+              </header>
+              <ul class="icons major">
+                <li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
+                <li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
+                <li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+              </ul>
+            </div>
+          </section> -->
+
+        <!-- Two -->
+          <section id="landing_pages" class="wrapper alt style2">{%
+            assign sorted_pages = site.pages | sort:"id" %}{%
+            for my_page in sorted_pages %}{%
+              if my_page.title %}{%
+                unless my_page.layout-options contains 'nolanding' %}
+            <section class="spotlight">
+              <div class="image"><a href="{{ my_page.url | prepend:site.baseurl }}"><img src="{{ site.baseurl }}/images/{% if my_page.image %}{{ my_page.image }}{% else %}banner.jpg{% endif %}" alt="" /></a></div><div class="content"><a href="{{ my_page.url | prepend:site.baseurl }}">
+                <h2>{{ my_page.title }}</h2>
+                <p>{{ my_page.excerpt markdownify | strip_html | strip_newlines | escape_once }}</p>
+              </a></div>
+            </section>{%
+                endunless %}{%
+              endif %}{%
+            endfor %}
+          </section>
+
+        <!-- Three -->
+          <section id="landing_features" class="wrapper style3 special">
+            <div class="inner">
+              <header class="major">
+                <h2>{{ site.features-title }}</h2>
+                <!-- <p>Blog posts with decent content</p> -->
+              </header>
+              <ul class="features">{%
+                for my_post in site.posts %}{%
+                  if my_post.categories contains 'featured' %}{%
+                    assign i = i | plus:1 %}
+                <li class="icon fa-{% if my_post.icon %}{{ my_post.icon }}{% else %}heart-o{% endif %}"><!-- featured:{{ i }} -->
+                  <a href="{{ my_post.url | prepend:site.baseurl }}">
+                  <div class="container">
+                  <h3>{{ my_post.title }}</h3>
+                  <p>{{ my_post.data}}<br />{{ my_post.excerpt | truncatewords: 16 }}</p>
+                  </div>
+                  </a>
+                </li>{%
+                    if i == 8 %}{%
+                      break %}{%
+                    endif %}{%
+                  endif %}{%
+                endfor %}
+              </ul>
+            </div>
+          </section>
+
+        <!-- CTA -->
+          <section id="cta" class="wrapper style4">
+            <div class="inner">
+              <header>
+                <h2>{{ site.closing-head }}</h2>
+                <p>{{ site.closing-para }}</p>
+              </header>
+              <ul class="actions vertical">
+                <!-- <li><a href="#" class="button fit special">Activate</a></li> -->
+                <li><a href="{{ '/page/contact' | prepend: site.baseurl }}" class="button fit special">Contact</a></li>
+              </ul>
+            </div>
+          </section>
 
       {% include footer.html %}
 

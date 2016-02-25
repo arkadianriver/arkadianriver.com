@@ -9,7 +9,7 @@
 /// @param {string} $keys Key(s).
 /// @return {string} Value.
 @function _font($keys...) {
-	@return val($font, $keys...);
+  @return val($font, $keys...);
 }
 
 /// Gets a misc value.
@@ -30,5 +30,5 @@
 /// @param {string} $keys Key(s).
 /// @return {string} Value.
 @function _size($keys...) {
-	@return val($size, $keys...);
+  @return val($size, $keys...);
 }

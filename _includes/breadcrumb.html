@@ -1,0 +1,14 @@
+<ul class="breadcrumb">
+  <li><a href="{{ site.baseurl }}/index.html">Home</a></li>{%
+  if page.layout == 'page' %}
+  <li>{{ page.title }}</li>{%
+  elsif page.layout == 'post' %}{%
+    if page.categories contains 'work' %}
+  <li><a href="{{ site.baseurl }}/page/works">Works</a></li>
+  <li>{{ page.title }}</li>{%
+    else %}
+  <li><a href="{{ site.baseurl }}/page/topics">Topics</a></li>
+  <li>{{ page.title }}</li>{%
+    endif %}{%
+  endif %}
+</ul>

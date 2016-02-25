@@ -7,14 +7,15 @@
         <a href="#menu" class="menuToggle"><span>Menu</span></a>
         <div id="menu">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            {% for my_page in site.pages %}
-            {% if my_page.title %}
-            <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-            {% endif %}
-            {% endfor %}
-            <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Log In</a></li>
+            <li><a href="{{ "/index.html" | prepend: site.baseurl }}">Home</a></li>{%
+            assign sorted_pages = site.pages | sort:"id" %}{%
+            for my_page in sorted_pages %}{%
+              if my_page.title %}{%
+                unless my_page.layout-options contains 'nomenu' %}
+            <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>{%
+                endunless %}{%
+              endif %}{%
+            endfor %}
             <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}"
                    class="icon fa-feed"> RSS Feed</a></li>
           </ul>

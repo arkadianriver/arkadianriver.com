@@ -23,7 +23,8 @@ $baseurl: '{{ site.baseurl }}/images';
 		large: '(max-width: 1280px)',
 		medium: '(max-width: 980px)',
 		small: '(max-width: 736px)',
-		xsmall: '(max-width: 480px)'
+		xsmall: '(max-width: 480px)',
+		dinky: '(max-width: 260px)'
 	));
 
 	@include skel-layout((
@@ -51,22 +52,22 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	body, input, select, textarea {
 		color: _palette(fg);
-		font-family: _font(family);
-		font-size: 15pt;
+		font-family: _font(ctrl-family);
+		font-size: _font(ctrl-size-xxlarge);
 		font-weight: _font(weight);
 		letter-spacing: _size(letter-spacing);
-		line-height: 1.65em;
+		line-height: _font(ctrl-lheight-normal);
 
 		@include breakpoint(xlarge) {
-			font-size: 13pt;
+			font-size: _font(ctrl-size-xlarge);
 		}
 
 		@include breakpoint(large) {
-			font-size: 12pt;
+			font-size: _font(ctrl-size-large);
 		}
 
-		@include breakpoint(small) {
-			font-size: 11pt;
+		@include breakpoint(ctrl-small) {
+			font-size: _font(ctrl-size-small);
 			letter-spacing: _size(letter-spacing) * 0.5;
 		}
 	}
@@ -110,48 +111,48 @@ $baseurl: '{{ site.baseurl }}/images';
 	}
 
 	h2 {
-		font-size: 1.35em;
+		font-size: _font(hdr-size-xlarge);
 		line-height: 1.75em;
 
 		@include breakpoint(small) {
-			font-size: 1.1em;
+			font-size: _font(hdr-size-large);
 			line-height: 1.65em;
 		}
 	}
 
 	h3 {
-		font-size: 1.15em;
-		line-height: 1.75em;
+		font-size: _font(hdr-size-normal);
+		line-height: _font(hdr-lhight-large);
 
 		@include breakpoint(small) {
-			font-size: 1em;
-			line-height: 1.65em;
+			font-size: _font(hdr-size-small);
+			line-height: _font(hdr-lhight-normal);
 		}
 	}
 
 	h4 {
-		font-size: 1em;
-		line-height: 1.5em;
+		font-size: _font(hdr-size-small);
+		line-height: _font(hdr-lhight-small);
 	}
 
 	h5 {
-		font-size: 0.8em;
-		line-height: 1.5em;
+		font-size: _font(hdr-size-xsmall);
+		line-height: _font(hdr-lhight-small);
 	}
 
 	h6 {
-		font-size: 0.7em;
-		line-height: 1.5em;
+		font-size: _font(hdr-size-xxsmall);
+		line-height: _font(hdr-lhight-small);
 	}
 
 	sub {
-		font-size: 0.8em;
+		font-size: _font(hdr-size-xsmall);
 		position: relative;
 		top: 0.5em;
 	}
 
 	sup {
-		font-size: 0.8em;
+		font-size: _font(hdr-size-xsmall);
 		position: relative;
 		top: -0.5em;
 	}
@@ -177,7 +178,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		background: _palette(border-bg);
 		border-radius: 3px;
 		font-family: _font(family-fixed);
-		font-size: 0.9em;
+		font-size: _font(fixed-size);
 		letter-spacing: 0;
 		margin: 0 0.25em;
 		padding: 0.25em 0.65em;
@@ -186,12 +187,12 @@ $baseurl: '{{ site.baseurl }}/images';
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: _font(family-fixed);
-		font-size: 0.9em;
+		font-size: _font(fixed-size);
 		margin: 0 0 _size(element-margin) 0;
 
 		code {
 			display: block;
-			line-height: 1.75em;
+			line-height: _font(fixed-lhight);
 			padding: 1em 1.5em;
 			overflow-x: auto;
 		}
@@ -207,6 +208,70 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	.align-right {
 		text-align: right;
+	}
+
+/* Post listing */
+
+  .post-list {
+		margin: 0;
+		padding: 2em;
+		width: 100%;
+		text-align: left;
+		vertical-align: top;
+		display: block;
+		font-size: 1em;
+
+		> li {
+			display: inline-block;
+			width: 240px;
+			height: 140px;
+			border: solid 1px black;
+			border-radius: 3px;
+			list-style: none;
+			line-height: 1em;
+			margin: 0.5em 0 0.5em 1em;
+			padding: 0;
+			/*
+			&:first-child {
+				border-left: 0;
+				margin-left: 0;
+			}
+			*/
+			&.featured {
+				border: solid 4px black;
+			}
+			.post-date {
+				font-style: italic;
+				line-height: _font(hdr-lhight-small);
+			}
+			.post-feature {
+				font-style: italic;
+				font-weight: _font(weight-bold);
+				line-height: _font(ctrl-size-small);
+			}
+			.post-title {
+				font-weight: _font(weight-extrabold);
+				font-size: _font(hdr-size-mlarge);
+				line-height: _font(hdr-lhight-small);
+			}
+			.post-desc{
+				font-size: _font(ctrl-size-small);
+			}
+			.container {
+				background: _palette(accent1, fg);
+				width: 100%;
+				height: 100%;
+				margin: 0;
+  			padding: 1em;
+			}
+			@include breakpoint(xsmall) {
+				border: 0;
+				display: block;
+				line-height: 0.9em;
+				margin: 0;
+				padding: 0.5em 0;
+			}
+		}
 	}
 
 /* Section/Article */
@@ -228,13 +293,13 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		h3 + p {
-			font-size: 1.1em;
+			font-size: _font(hdr-size-large);
 		}
 
 		h4 + p,
 		h5 + p,
 		h6 + p {
-			font-size: 0.9em;
+			font-size: _font(hdr-size-smaller);
 		}
 
 		&.major {
@@ -279,7 +344,7 @@ $baseurl: '{{ site.baseurl }}/images';
 	label {
 		color: _palette(fg-bold);
 		display: block;
-		font-size: 0.9em;
+		font-size: _font(ctrl-form-label-size);
 		font-weight: _font(weight-bold);
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 	}
@@ -359,7 +424,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
-			font-size: 1em;
+			font-size: _font(ctrl-form-size);
 			font-weight: _font(weight);
 			padding-left: (_size(element-height) * 0.6) + 0.75em;
 			padding-right: 0.75em;
@@ -473,7 +538,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			border-radius: 3px;
 			border: solid 2px _palette(border);
 			display: inline-block;
-			font-size: 1.35em;
+			font-size: _font(hdr-size-xlarge);
 			height: calc(3em + 2px);
 			line-height: 3em;
 			text-align: center;
@@ -486,7 +551,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			}
 
 			@include breakpoint(small) {
-				font-size: 1em;
+				font-size: _font(hdr-size-large);
 			}
 		}
 
@@ -816,11 +881,11 @@ $baseurl: '{{ site.baseurl }}/images';
 		color: _palette(fg-bold);
 		cursor: pointer;
 		display: inline-block;
-		font-size: 0.8em;
+		font-size: _font(ctrl-bttn-size);
 		font-weight: _font(weight-bold);
 		height: 3.125em;
 		letter-spacing: _size(letter-spacing-alt);
-		line-height: 3.125em;
+		line-height: _font(ctrl-bttn-lhight);
 		padding: 0 2.75em;
 		text-align: center;
 		text-decoration: none;
@@ -850,11 +915,11 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		&.small {
-			font-size: 0.8em;
+			font-size: _font(ctrl-bttn-size);
 		}
 
 		&.big {
-			font-size: 1.35em;
+			font-size: _font(ctrl-bttn-bigsize);
 		}
 
 		&.special {
@@ -893,12 +958,29 @@ $baseurl: '{{ site.baseurl }}/images';
 		padding: 0;
 		width: 100%;
 
+		a {
+			@include vendor('transition', ('color #{_duration(transitions)} ease', 'border-bottom-color #{_duration(transitions)} ease'));
+			border-bottom: none;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				border-bottom-color: none;
+			}
+		}
+
 		li {
-			@include padding(4em, 4em, (0,0,0,2em));
 			display: block;
 			position: relative;
 			text-align: left;
 			width: 50%;
+
+			.container {
+	  		width: 100%;
+  			height: 100%;
+ 				margin: 0;
+  			@include padding(4em, 4em, (0,0,0,2em));
+			}
 
 			@for $i from 1 through _misc(max-features) {
 				$j: 0.035 * $i;
@@ -963,6 +1045,17 @@ $baseurl: '{{ site.baseurl }}/images';
 	.spotlight {
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
+
+		a {
+			@include vendor('transition', ('color #{_duration(transitions)} ease', 'border-bottom-color #{_duration(transitions)} ease'));
+			border-bottom: none;
+			color: inherit;
+			text-decoration: none;
+
+			&:hover {
+				border-bottom-color: none;
+			}
+		}
 
 		.image {
 			@include vendor('order', '1');
@@ -1219,12 +1312,58 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	}
 
+	.breadcrumb {
+		margin: 0;
+		padding: 0 2em 0 1.5em;
+		width: 100%;
+		text-align: left;
+		vertical-align: top;
+		display: block;
+		font-size: 0.8em;
+		@include wrapper(accent7);
+
+		li {
+			display: inline;
+			list-style: none;
+			line-height: 1em;
+			margin-left: 0;
+			padding-left: 0.3em;
+			&:before {
+			  content: "\0BB \020 \020";
+			}
+			&:first-child {
+				border-left: 0;
+				margin-left: 0;
+				padding-left: 0;
+				&:before {
+				  content: " ";
+				}
+			}
+			@include breakpoint(dinky) {
+				border: 0;
+				display: block;
+				line-height: 0.9em;
+				margin: 0;
+				padding: 0.5em 0;
+			}
+		}
+	}
+
+	.wrapper.minihead {
+		@include padding(1em, 0);
+	}
+
 	.wrapper {
 		@include padding(6em, 0);
 
 		> .inner {
 			width: 60em;
 			margin: 0 auto;
+
+			&.fullwidth {
+				width: 100%;
+				padding: 0 16px 0 16px;
+			}
 
 			@include breakpoint(large) {
 				width: 90%;
@@ -1233,6 +1372,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			@include breakpoint(medium) {
 				width: 100%;
 			}
+
 		}
 
 		&.alt {
@@ -1313,6 +1453,7 @@ $baseurl: '{{ site.baseurl }}/images';
 				border-top: solid 1px _palette(accent1, border);
 				margin: 0.5em 0 0 0;
 				padding: 0.5em 0 0 0;
+				font-family: _font(ctrl-family);
 
 				&:first-child {
 					border-top: 0 !important;
@@ -1324,7 +1465,7 @@ $baseurl: '{{ site.baseurl }}/images';
 					border: 0;
 					color: inherit;
 					display: block;
-					font-size: 0.8em;
+					font-size: _font(hdr-size-xsmall);
 					letter-spacing: _size(letter-spacing-alt);
 					outline: 0;
 					text-decoration: none;
@@ -1391,6 +1532,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			line-height: inherit;
 			position: absolute;
 			top: 0;
+			text-transform: none;
 
 			a {
 				border: 0;
@@ -1399,7 +1541,7 @@ $baseurl: '{{ site.baseurl }}/images';
 				line-height: inherit;
 
 				@include breakpoint(small) {
-					font-size: 0.8em;
+					font-size: _font(hdr-size-xsmall);
 				}
 			}
 		}
@@ -1425,7 +1567,7 @@ $baseurl: '{{ site.baseurl }}/images';
 						border: 0;
 						color: _palette(fg-bold);
 						display: block;
-						font-size: 0.8em;
+						font-size: _font(hdr-size-xsmall);
 						letter-spacing: _size(letter-spacing-alt);
 						padding: 0 1.5em;
 						text-transform: uppercase;
@@ -1491,17 +1633,21 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		h2 {
 			@include vendor('transform', 'scale(1)');
-			@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+//		@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+			@include vendor('transition', ('transform 0.2s ease', 'opacity 0.2s ease'));
 			display: inline-block;
 			font-size: 1.75em;
 			opacity: 1;
 			padding: 0.35em 1em;
 			position: relative;
 			z-index: 1;
+			text-transform: none;
 
 			&:before, &:after {
+//			@include vendor('transition', 'width 0.85s ease');
+//			@include vendor('transition-delay', '0.25s');
 				@include vendor('transition', 'width 0.85s ease');
-				@include vendor('transition-delay', '0.25s');
+				@include vendor('transition-delay', '0');
 				background: _palette(fg-bold);
 				content: '';
 				display: block;
@@ -1532,7 +1678,8 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		.more {
 			@include vendor('transition', ('transform 0.75s ease', 'opacity 0.75s ease'));
-			@include vendor('transition-delay', '3.5s');
+//		@include vendor('transition-delay', '3.5s');
+			@include vendor('transition-delay', '0');
 			@include vendor('transform', 'translateY(0)');
 			border: none;
 			bottom: 0;
@@ -1570,7 +1717,8 @@ $baseurl: '{{ site.baseurl }}/images';
 		&:after {
 			@include vendor('pointer-events', 'none');
 			@include vendor('transition', 'opacity #{_duration(fadein)} ease-in-out');
-			@include vendor('transition-delay', '1.25s');
+//		@include vendor('transition-delay', '1.25s');
+			@include vendor('transition-delay', '0');
 			content: '';
 			background: _palette(bg);
 			display: block;
@@ -1670,7 +1818,54 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
-/* Main */
+/* Articles */
+
+	#standard {
+		> header {
+			text-align: center;
+
+			h2 {
+				font-size: _font(hdr-size-xxlarge);
+				margin: 0 0 (_size(element-margin) * 0.25) 0;
+			}
+
+			p {
+				color: inherit;
+				letter-spacing: _size(letter-spacing-alt);
+				text-transform: uppercase;
+				top: 0;
+
+				a {
+					color: inherit;
+				}
+			}
+		}
+	}
+
+	#minihead {
+		> header {
+			@include padding(1em, 1em);
+			background: _palette(fg);
+			text-align: left;
+
+			h2 {
+				font-size: _font(hdr-size-xxlarge);
+				margin: 0;
+				color: _palette(bg);
+			}
+
+			p {
+				color: _palette(bg);
+				letter-spacing: _size(letter-spacing-alt);
+				text-transform: uppercase;
+				top: 0;
+
+				a {
+					color: inherit;
+				}
+			}
+		}
+	}
 
 	#main {
 		> header {
@@ -1683,7 +1878,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			text-align: center;
 
 			h2 {
-				font-size: 1.75em;
+				font-size: _font(hdr-size-xxlarge);
 				margin: 0 0 (_size(element-margin) * 0.25) 0;
 			}
 
@@ -1699,7 +1894,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			}
 
 			@include breakpoint(xlarge) {
-				@include padding(10em, 0);
+				@include padding(8em, 0);
 			}
 
 			@include breakpoint(large) {
@@ -1707,14 +1902,14 @@ $baseurl: '{{ site.baseurl }}/images';
 			}
 
 			@include breakpoint(medium) {
-				@include padding(10em, 3em);
+				@include padding(6em, 3em);
 			}
 
 			@include breakpoint(small) {
-				@include padding(5em, 3em);
+				@include padding(3em, 3em);
 
 				h2 {
-					font-size: 1.25em;
+					font-size: _font(hdr-size-mlarge);
 					margin: 0 0 (_size(element-margin) * 0.5) 0;
 				}
 			}
