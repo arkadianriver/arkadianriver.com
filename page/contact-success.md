@@ -5,7 +5,7 @@ title: Contact
 id: 3
 excerpt: Get in touch
 image: pic02.jpg
-background-image: banner.jpg
+background-image: banner.png
 ---
 
 ## Hey, thanks!
