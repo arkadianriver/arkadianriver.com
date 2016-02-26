@@ -3,12 +3,10 @@
   if page.layout == 'page' %}
   <li>{{ page.title }}</li>{%
   elsif page.layout == 'post' %}{%
-    if page.categories contains 'work' %}
-  <li><a href="{{ site.baseurl }}/page/works">Works</a></li>
+    for cat in page.categories %}{%
+      capture urlstr %}{{ urlstr }}/{{ cat }}{% endcapture %}
+  <li style="text-transform: capitalize;"><a href="{{ site.baseurl }}{{ urlstr }}">{{ cat }}</a></li>{%
+    endfor %}
   <li>{{ page.title }}</li>{%
-    else %}
-  <li><a href="{{ site.baseurl }}/page/topics">Topics</a></li>
-  <li>{{ page.title }}</li>{%
-    endif %}{%
   endif %}
 </ul>

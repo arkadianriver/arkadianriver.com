@@ -71,7 +71,7 @@
               </header>
               <ul class="features">{%
                 for my_post in site.posts %}{%
-                  if my_post.categories contains 'featured' %}{%
+                  if my_post.tags contains 'featured' %}{%
                     assign i = i | plus:1 %}
                 <li class="icon fa-{% if my_post.icon %}{{ my_post.icon }}{% else %}heart-o{% endif %}"><!-- featured:{{ i }} -->
                   <a href="{{ my_post.url | prepend:site.baseurl }}">

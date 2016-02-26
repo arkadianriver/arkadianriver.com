@@ -64,7 +64,7 @@ social:
   #amazon:
 
 # Build settings
-permalink: /topics/:title.html
+permalink: /:categories/:title.html
 markdown: kramdown
 #sass:
 #  style: compressed

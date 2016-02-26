@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Topics
-layout-options: fullwidth
 id: 2
+title: Topics
+permalink: /topics/
+layout-options: fullwidth
 excerpt: Just ramblings and musings? Nay, nay
 image: pic01.jpg
 background-image: pic01.jpg
@@ -11,10 +12,10 @@ background-image: pic01.jpg
   {% if site.posts %}
   <ul class="post-list">
     {% for post in site.posts %}
-      <li{% if post.categories contains "featured" %}  class="featured"{% endif %}>
+      <li{% if post.tags contains "featured" %}  class="featured"{% endif %}>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
           <div class="container">{%
-            if post.categories contains "featured" %}
+            if post.tags contains "featured" %}
             <span class="post-feature">Featured:<br /></span>{%
             endif %}
             <span class="post-title">{{ post.title }}<br /></span>
