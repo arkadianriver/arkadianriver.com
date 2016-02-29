@@ -1,8 +1,8 @@
 ---
-layout: page
-layout-options: nolanding
-title: Contact
 id: 3
+title: Contact
+permalink: /contact/
+options: nolanding
 excerpt: Get in touch
 image: pic02.jpg
 ---
@@ -29,6 +29,6 @@ image: pic02.jpg
       </div>
     </div>
     <input type="hidden" name="success"
-           value="{{ '/page/contact-success' | prepend: site.baseurl | prepend: site.url }}" />
+           value="{{ '/contact-success' | prepend: site.baseurl | prepend: site.url }}" />
   </form>
 </section>
