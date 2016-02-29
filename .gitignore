@@ -1,9 +1,9 @@
 # Jekyll ignores
+.jekyll-metadata
 .sass-cache/
 _site/
 _drafts/
 _data/tokens.yml
-sleepshift/
 
 # Windows image file caches
 Thumbs.db

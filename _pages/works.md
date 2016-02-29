@@ -1,5 +1,4 @@
 ---
-layout: page
 id: 1
 title: Works
 permalink: /works/

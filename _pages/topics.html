@@ -1,0 +1,48 @@
+---
+id: 2
+title: Topics
+permalink: /topics/
+options: fullwidth
+excerpt: Just ramblings and musings? Nay, nay
+image: pic01.jpg
+background-image: pic01.jpg
+---
+
+  {% if site.posts %}
+  <hr style="margin:0 0 1em 0;" />
+  <h4>Featured posts</h4>
+  <ul class="post-list">{%
+      for post in site.posts %}{%
+        if post.tags contains "featured" %}
+      <li>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="container">
+            <span class="post-title">{{ post.title }}<br /></span>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}<br /></span>
+            <span class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</span>
+          </div>
+        </a>
+      </li>{%
+        endif %}{%
+      endfor %}
+  </ul>
+  <hr style="margin:1em 0 1em 0;" />
+  <ul class="post-list">{%
+      for post in site.posts %}{%
+        unless post.tags contains "featured" %}
+      <li{% if post.tags contains "featured" %}  class="featured"{% endif %}>
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+          <div class="container">{%
+            if post.tags contains "featured" %}
+            <span class="post-feature">Featured:<br /></span>{%
+            endif %}
+            <span class="post-title">{{ post.title }}<br /></span>
+            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}<br /></span>
+            <span class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</span>
+          </div>
+        </a>
+      </li>{%
+        endunless %}{%
+      endfor %}
+  </ul>
+  {% endif %}

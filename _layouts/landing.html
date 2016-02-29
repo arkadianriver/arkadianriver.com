@@ -50,12 +50,19 @@
             assign sorted_pages = site.pages | sort:"id" %}{%
             for my_page in sorted_pages %}{%
               if my_page.title %}{%
-                unless my_page.layout-options contains 'nolanding' %}
+                unless my_page.options contains 'nolanding' %}
             <section class="spotlight">
-              <div class="image"><a href="{{ my_page.url | prepend:site.baseurl }}"><img src="{{ site.baseurl }}/images/{% if my_page.image %}{{ my_page.image }}{% else %}banner.png{% endif %}" alt="" /></a></div><div class="content"><a href="{{ my_page.url | prepend:site.baseurl }}">
+              <div class="image">
+                <a href="{{ my_page.url | prepend:site.baseurl }}">
+                <img src="{{ site.baseurl }}/images/{% if my_page.image %}{{ my_page.image }}{% else %}banner.png{% endif %}" alt="" />
+                </a>
+              </div>
+              <div class="content">
+                <a href="{{ my_page.url | prepend:site.baseurl }}">
                 <h2>{{ my_page.title }}</h2>
                 <p>{{ my_page.excerpt markdownify | strip_html | strip_newlines | escape_once }}</p>
-              </a></div>
+                </a>
+              </div>
             </section>{%
                 endunless %}{%
               endif %}{%
@@ -77,7 +84,7 @@
                   <a href="{{ my_post.url | prepend:site.baseurl }}">
                   <div class="container">
                   <h3>{{ my_post.title }}</h3>
-                  <p>{{ my_post.data}}<br />{{ my_post.excerpt | truncatewords: 16 }}</p>
+                  <p>{{ my_post.data}}<br />{{ my_post.excerpt | strip_html | truncatewords: 16 }}</p>
                   </div>
                   </a>
                 </li>{%
@@ -99,7 +106,7 @@
               </header>
               <ul class="actions vertical">
                 <!-- <li><a href="#" class="button fit special">Activate</a></li> -->
-                <li><a href="{{ '/page/contact' | prepend: site.baseurl }}" class="button fit special">Contact</a></li>
+                <li><a href="{{ '/contact/' | prepend: site.baseurl }}" class="button fit special">Contact</a></li>
               </ul>
             </div>
           </section>

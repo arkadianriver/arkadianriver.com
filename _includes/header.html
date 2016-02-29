@@ -11,7 +11,7 @@
             assign sorted_pages = site.pages | sort:"id" %}{%
             for my_page in sorted_pages %}{%
               if my_page.title %}{%
-                unless my_page.layout-options contains 'nomenu' %}
+                unless my_page.options contains 'nomenu' %}
             <li><a href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>{%
                 endunless %}{%
               endif %}{%

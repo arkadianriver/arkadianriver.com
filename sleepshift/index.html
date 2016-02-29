@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <title>My week</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="sleepshift.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script type="text/javascript" src="sleepshift.js"></script>
+  </head>
+  <body>
+
+    <div id="sleepshift"></div>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        SleepShift.init({
+          mytimezonename:   "Pacific",
+          tzhash: {
+            "Pacific":      -8,
+            "Eastern":      -5,
+            "Frankfurt":     1,
+            "Novosibirsk":   6,
+            "Tel Aviv":      2,
+            "+00:30 India":  5,
+            "Beijing":       8,
+            "Tokyo":         9,
+            "Sydney":       11
+          },
+          cellstyles: {
+            "workout":                ["6af",[37,91,149]],
+            "clean-and-shop":         ["ac3",[53,54,55]],
+            "my-work":                ["6fd",[0,164,165,166,167]],
+            "server-maintenance":     ["f88",[118,119,120]],
+            "eat":                    ["3da",[1,7,23,30,38,51,61,67,79,85,92,107,
+                                              114,121,135,142,150,163]],
+            "family-friends-errands": ["9df",[108,109,110,111,112,113,115,116,117,
+                                              136,137,138,139,140,141]],
+            "work":                   ["ffa",[ 2, 3, 4, 5, 6,   8, 9,10,11,12,
+                                              26,27,28,29,31,  32,33,34,35,36,
+                                              56,57,58,59,60,  62,63,64,65,66,
+                                              80,81,82,83,84,  86,87,88,89,90]]
+          }
+        });
+        SleepShift.drawMyCal();
+      });
+    </script>
+  </body>
+</html>

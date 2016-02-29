@@ -1,30 +1,16 @@
 ---
 layout: default
 ---
-  <section class="wrapper{% if page.layout-options contains 'minihead' %} minihead{% endif %} style5">
-    <div class="inner{% if page.layout-options contains 'fullwidth' %} fullwidth{% endif %}">{% unless page.author == 'none' %}
-      <div class="author" style="margin:8px 28px 12px 0;position:relative;float:left;">{%
-          if page.author %}{%
-            assign auth = site.data.authors[page.author] %}{%
-          else %}{%
-            assign auth = site.owner %}{%
-          endif %}{%
-          assign test1 = auth.avatar | slice: 0,4 %}{%
-          if test1 == "http" %}{%
-            assign pic = auth.avatar %}{%
-          else %}{%
-            assign pic = auth.avatar | prepend: "/images/" | prepend: site.baseurl %}{%
-          endif %}
-        <div style="position: relative; float: left;margin:0;padding:0;"><img
-          height="100px" width="100px"
-          src="{{ pic }}" alt="" /></div>
-        <div style="position: relative; float: left;padding-left:12px;"><b>{{
-          auth.name }}</b><br />(<a href="mailto:{{ auth.email }}">{{ auth.email }}</a>)<br
-          /><i><a href="{{ auth.url }}" target="_blank">{{ auth.url }}</a></i><br
-          />{{ page.date | date: "%Y-%m-%d"  }}
-        </div>
-      </div>{% endunless %}
+  <section class="wrapper{% if page.options contains 'minihead' %} minihead{% endif %} style5">
+    <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{% unless page.options contains 'minihead' %}
+      <h4><i>{{ page.date | date: "%Y-%m-%d"  }}</i></h4><hr />{% endunless %}
       <!-- <div style="clear: both;margin-bottom:32px;"></div> -->
-      {{ content }}
+      {{ content }}{% unless page.author == 'none' %}
+      {% include author-block.html %}{% endunless %}{%
+      if site.owner.disqus_shortname and jekyll.environment == "production" %}{%
+        unless page.options contains nocomment %}
+      {% include disqus.html %}{%
+        endunless %}{%
+      endif %}
     </div>
   </section>

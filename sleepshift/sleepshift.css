@@ -1,0 +1,43 @@
+#sleepshift span,
+#sleepshift p,
+#sleepshift th,
+#sleepshift td,
+#sleepshift .colorkey,
+#sleepshift * {
+  font: 8pt Tahoma, Helvetica;
+}
+#sleepshift h1 {
+  font: bold 11pt 'Open Sans', Tahoma, Helvetica;
+}
+#sleepshift table {
+  border:3px solid #000;
+  border-spacing:0;
+  border-collapse:collapse;
+  width: 100%;
+}
+#sleepshift th,
+#sleepshift td {
+  border:1px solid #f69;
+  width:14.2%;
+  margin:0;
+  padding:2px;
+}
+#sleepshift th {
+  font-weight: bold;
+  background-color: #9bf;
+}
+#sleepshift .gmtborder {
+  border: solid 3px #000;
+}
+#sleepshift .timeborder {
+  border: solid 3px #00d;
+}
+#sleepshift #colorkey {
+  width: 100%;
+}
+#sleepshift .colorkey {
+  width: 120px;
+  position: relative;
+  float: left;
+  padding: 3px;
+}

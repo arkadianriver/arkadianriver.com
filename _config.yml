@@ -6,6 +6,10 @@ title: arkadianriver
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
   name: Gary Faircloth # or company name
+  bio: >
+    Interests: tech writing, programming, science, history.
+    You might also find me playing some PC Ga&mdash;SQUIRREL!
+  disqus_shortname: arkadianriver
   email: gfair@arkadianriver.com
   url: http://arkadianriver.com
   avatar: owner.png
@@ -28,7 +32,7 @@ social:
   linkedin-square: https://linkedin.com/in/arkadianriver
   facebook-official: https://facebook.com/gary.faircloth
   google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
-  #email: /contact/
+  email: /contact/
   #flickr:
   #instagram:
   #youtube-square:
@@ -68,4 +72,11 @@ permalink: /:categories/:title.html
 markdown: kramdown
 #sass:
 #  style: compressed
-include: ['page']
+exclude: ['site.bat']
+include: ['_pages','.htaccess']
+defaults:
+  - scope:
+      path: _pages
+    values:
+      layout: page
+      #permalink: /:slug/ # see github.com/jekyll/jekyll/issues/2280 for restriction
