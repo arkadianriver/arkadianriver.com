@@ -6,6 +6,9 @@
 #sleepshift * {
   font: 8pt Tahoma, Helvetica;
 }
+#sleepshift small {
+  font-size: 7pt;
+}
 #sleepshift h1 {
   font: bold 11pt 'Open Sans', Tahoma, Helvetica;
 }

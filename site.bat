@@ -1,6 +1,16 @@
 @echo off
 :: -------------------------------------
-:: Using WinSCP to publish from Windows
+:: Shortcuts to develop, preview, and publish a site
+:: - Using WinSCP to publish from Windows
+::
+:: Example for .defaults file
+:: JKL_WINSCPPATH=C:\PROGRA~1\WinSCP
+:: JKL_LOCALSITEPATH=C:\Users\username\_git\myrepo\_site
+:: JKL_REMOTESITEPATH=/home/username/public_html
+:: JKL_REMOTEHOST=finesite.example.com
+:: JKL_REMOTEUSER=myremoteuser
+:: JKL_REMOTEEXCLUDES=admin/; anotherapp/; myimportantremotefile.html;
+::
 :: -------------------------------------
 if x%1==x goto :oops
 for /f "tokens=1,2 delims==" %%i in (%USERPROFILE%\.jekyll\arkadianriver.com.defaults) do @set %%i=%%j

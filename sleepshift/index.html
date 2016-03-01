@@ -7,9 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script type="text/javascript" src="sleepshift.js"></script>
   </head>
+  <style>
+  @media (min-width: 710px) {
+    #ss {
+      width: 700px;
+    }
+    #ss th,
+    #ss td {
+      width: 90px;
+    }
+  }
+  </style>
   <body>
 
-    <div id="sleepshift"></div>
+    <div id="ss"><div id="sleepshift"></div></div>
 
     <script type="text/javascript">
       $(document).ready(function(){
