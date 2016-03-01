@@ -203,13 +203,13 @@ var SleepShift = {
       tid = SleepShift.pad(tid,3);
       if (key.match(/^LOCAL/)) { // overwrites any text in same tzhash zone
         $("#sleepshift #td"+tid).addClass('timeborder');
-        $("#sleepshift #td"+tid+" > small").text('- ' + key);
+        $("#sleepshift #td"+tid+" > small").text(key);
       } else {
-        $("#sleepshift #td"+tid+" > small").text('- ' + key);
+        $("#sleepshift #td"+tid+" > small").text(key);
       }
     });
     // set gmtcell style afterward, overwriting any tzhash 0, say, London.
-    $("#sleepshift #td"+gmtcell+" > small").text('- GMT');
+    $("#sleepshift #td"+gmtcell+" > small").text('GMT');
     $("#sleepshift #td"+gmtcell).addClass('gmtborder');
     setTimeout(SleepShift.drawTimeZones, 30000); // accurate to within 30 seconds
     // (no sense running it every second)
