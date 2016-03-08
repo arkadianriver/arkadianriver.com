@@ -80,3 +80,7 @@ defaults:
     values:
       layout: page
       #permalink: /:slug/ # see github.com/jekyll/jekyll/issues/2280 for restriction
+  - scope:
+      path: _posts
+    values:
+      layout: post
