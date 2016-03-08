@@ -3,7 +3,8 @@ layout: default
 ---
   <section class="wrapper{% if page.options contains 'minihead' %} minihead{% endif %} style5">
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{% unless page.options contains 'minihead' %}
-      <h4><i>{{ page.date | date: "%Y-%m-%d"  }}</i></h4><hr />{% endunless %}
+      <span id="post-date">{{ page.date  | date: "%-d %B %Y" }}</span><hr
+        style="margin-top:3px;" />{% endunless %}
       <!-- <div style="clear: both;margin-bottom:32px;"></div> -->
       {{ content }}{% unless page.author == 'none' %}
       {% include author-block.html %}{% endunless %}{%
