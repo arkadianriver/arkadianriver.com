@@ -28,11 +28,14 @@
 
 // Font.
 	$font: (
+		prose-weight: 400,
+		prose-weight-bold: 700,
 		weight:				400,
 		weight-bold:		600,
 		weight-extrabold:	800,
 		family-fixed:		('Consolas', 'Inconsolata', 'Monaco', monospace),
 		fixed-size:            1em,
+		inline-fixed-size:     1.05em,
 		fixed-lheight:          1.75em,
 		ctrl-family:				('Open Sans', Helvetica, sans-serif),
 		ctrl-size-xxlarge:      15pt,
@@ -46,12 +49,15 @@
 		ctrl-bttn-size:       0.8em,
 		ctrl-bttn-bigsize:       1.35em,
 		ctrl-bttn-lheight:     3.125em,
-		prose-family:				('Palatino', 'Garamond', 'Times New Roman', serif),
+		prose-family:				('Lora', 'Garamond', serif),
 		prose-size-xxlarge:      15pt,
 		prose-size-xlarge:      13pt,
 		prose-size-large:      12pt,
-		prose-size-small:      11pt,
+		prose-size-small:      10pt,
 		prose-lheight-normal: 1.65em,
+		prose-lheight-small: 1.35em,
+		prose-lheight-smaller: 1.25em,
+		prose-lheight-smallest: 0.9em,
 		hdr-size-xxlarge:   1.75em,
 		hdr-size-xlarge:    1.35em,
 		hdr-size-mlarge:    1.25em,
@@ -63,7 +69,8 @@
     hdr-size-xxsmall:   0.7em,
 		hdr-lheight-large:   1.75em,
 		hdr-lheight-normal:  1.65em,
-		hdr-lheight-small:   1.5em
+		hdr-lheight-small:   1.5em,
+		hdr-lheight-smaller:   1em
 	);
 
 // Palette.
@@ -144,7 +151,7 @@
 		),
 
 		accent7: (
-			bg:				#ffffff,
+			bg:				#fafafa,
 			fg-bold:		#2E3842,
 			fg:				#4E4852,
 			fg-light:		#8E8892,

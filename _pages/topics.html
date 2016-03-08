@@ -17,9 +17,9 @@ background-image: pic01.jpg
       <li>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
           <div class="container">
-            <span class="post-title">{{ post.title }}<br /></span>
-            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}<br /></span>
-            <span class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</span>
+            <p class="post-title">{{ post.title }}</p>
+            <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+            <p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
           </div>
         </a>
       </li>{%
@@ -30,15 +30,12 @@ background-image: pic01.jpg
   <ul class="post-list">{%
       for post in site.posts %}{%
         unless post.tags contains "featured" %}
-      <li{% if post.tags contains "featured" %}  class="featured"{% endif %}>
+      <li>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-          <div class="container">{%
-            if post.tags contains "featured" %}
-            <span class="post-feature">Featured:<br /></span>{%
-            endif %}
-            <span class="post-title">{{ post.title }}<br /></span>
-            <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}<br /></span>
-            <span class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</span>
+          <div class="container">
+            <p class="post-title">{{ post.title }}</p>
+            <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
+            <p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
           </div>
         </a>
       </li>{%

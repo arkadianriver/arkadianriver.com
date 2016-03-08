@@ -9,6 +9,7 @@ $baseurl: '{{ site.baseurl }}/images';
 @import 'libs/mixins';
 @import 'font-awesome.min.css';
 @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 @import 'syntax-highlighting.css';
 @import 'vendor/disqus.css';
 
@@ -169,6 +170,44 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
+  article .inner {
+  	/*
+  	// If choosing serif font for headers
+  	h1, h2, h3, h4, h5, h6, h7 {
+  		color: _palette(accent7,fg);
+  		font-family: _font(prose-family);
+  		text-transform: none;
+  		letter-spacing: _size(letter-spacing);
+  		//font-weight: _font(weight);
+  	}
+  	// might have to adjust sizes as well
+  	h2 {
+  		font-size: _font(hdr-size-xlarge);
+  	}
+  	*/
+    p, dt, dd, p span, th, td, li, blockquote, #post-date {
+      font-family: _font(prose-family);
+      font-size: _font(prose-size-large);
+      font-weight: _font(prose-weight);
+      line-height: _font(prose-lheight-normal);
+      strong, b {
+        font-weight: _font(prose-font-weight);
+      }
+    }
+    th, dt {
+    	font-weight: _font(prose-weight-bold);
+    }
+    #post-date {
+    	font-weight: _font(prose-weight-bold);
+    }
+    p code {
+      font-size: _font(inline-fixed-size);
+    }
+    .actions * {
+      font-family: _font(ctrl-family);
+    }
+  }
+
 	blockquote {
 		border-left: solid 5px _palette(border);
 		font-style: italic;
@@ -227,55 +266,59 @@ $baseurl: '{{ site.baseurl }}/images';
 		font-size: 1em;
 
 		> li {
+			vertical-align: top;
 			display: inline-block;
 			width: 240px;
-			height: 120px;
-			border: solid 1px black;
-			border-radius: 3px;
+			//height: 120px;
+			//border: solid 1px black;
+			border-radius: 8px;
 			list-style: none;
 			line-height: 1em;
 			margin: 0.5em 0 0.5em 1em;
 			padding: 0;
 			/*
 			&:first-child {
-				border-left: 0;
+				//border-left: 0;
 				margin-left: 0;
 			}
-			*/
 			&.featured {
 				border: solid 4px black;
 			}
+			*/
 			.post-date {
 				font-style: italic;
-				line-height: _font(hdr-lheight-small);
+				padding: 0 0 5px 0;
+				margin: 0;
+				line-height: _font(prose-lheight-small);
 			}
 			.post-feature {
+				padding: 0;
+				margin: 0;
 				font-style: italic;
 				font-weight: _font(weight-bold);
 				line-height: _font(ctrl-size-small);
 			}
 			.post-title {
+				padding: 0;
+				margin: 0;
 				font-weight: _font(weight-extrabold);
-				font-size: _font(hdr-size-mlarge);
+				font-size: _font(hdr-size-large);
 				line-height: _font(hdr-lheight-small);
 			}
 			.post-desc{
-				font-size: _font(ctrl-size-small);
-				line-height: _font(ctrl-lheight-small);
+				padding: 0;
+				margin: 0;
+				font-size: _font(prose-size-small);
+				line-height: _font(prose-lheight-smaller);
 			}
 			.container {
-				background: _palette(accent1, fg);
+				background: _palette(accent6,fg);
+				border-radius: 8px;
 				width: 100%;
 				height: 100%;
+				line-height: _font(prose-lheight-small);
 				margin: 0;
-  			padding: 1em;
-			}
-			@include breakpoint(xsmall) {
-				border: 0;
-				display: block;
-				line-height: 0.9em;
-				margin: 0;
-				padding: 0.5em 0;
+  			padding: 0.8em;
 			}
 		}
 	}
