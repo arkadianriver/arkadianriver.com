@@ -4,7 +4,7 @@ title: Contact
 permalink: /contact/
 options: nolanding
 excerpt: Get in touch
-image: pic02.jpg
+background-image: caustic_light.jpg
 ---
 
 <section>

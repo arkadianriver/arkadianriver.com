@@ -4,8 +4,7 @@ title: Thanks!
 permalink: /contact-success/
 options: nomenu, nolanding
 excerpt: I'll get in touch soon
-image: pic02.jpg
-background-image: banner.png
+background-image: caustic_light.jpg
 ---
 
 Meanwhile, why not check out some
