@@ -6,13 +6,8 @@ title: arkadianriver
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
   name: Gary Faircloth # or company name
-  bio: >
-    Interests: tech writing, programming, science, history.
-    You might also find me playing some PC Ga&mdash;SQUIRREL!
-  disqus_shortname: arkadianriver
   email: gfair@arkadianriver.com
   url: http://arkadianriver.com
-  avatar: owner.png
 first_published: 1996 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site

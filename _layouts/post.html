@@ -8,7 +8,7 @@ layout: default
       <!-- <div style="clear: both;margin-bottom:32px;"></div> -->
       {{ content }}{% unless page.author == 'none' %}
       {% include author-block.html %}{% endunless %}{%
-      if site.owner.disqus_shortname and jekyll.environment == "production" %}{%
+      if jekyll.environment == "production" %}{%
         unless page.options contains nocomment %}
       {% include disqus.html %}{%
         endunless %}{%
