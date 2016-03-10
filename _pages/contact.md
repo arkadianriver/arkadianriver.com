@@ -8,7 +8,7 @@ background-image: caustic_light.jpg
 ---
 
 <section>
-  <form method="post" action="http://arkadianriver.com/cgi-bin/cgiemail/mailtome.config">
+  <form method="post" action="{{ site.data.tokens.mailaction }}">
     <div class="row uniform">
       <div class="6u 12u$(xsmall)">
         <input type="text" name="required-name" id="required-name" value="" placeholder="Name" />

@@ -1,0 +1,13 @@
+# Rename this file to tokens.yml
+
+# If you want to keep the EarthTV post for your site, contact EarthTV
+# for permission and to get a token of your own
+# http://www.earthtv.com/en/contact/
+earthtv: <earthTV token>
+
+# If you want to use Google analytics to monitor your site traffic,
+# register your site https://www.google.com/analytics/standard/
+google-analytics: <google-analytics tracking ID>
+
+# Specify your mail form action, whether it be cgiemail, PHP, whatever
+mailaction: <url to your mail sending app>

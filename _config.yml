@@ -1,5 +1,7 @@
 # Welcome to Jekyll!
 #
+# In addition to these settings, there is a file _data/tokens-template.yml
+# that you'll want to customize for your site.
 
 # Site settings
 title: arkadianriver
