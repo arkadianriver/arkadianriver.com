@@ -18,25 +18,24 @@ popd
 
 ### How to
 
-The framework is probably close to complete and I'll probably just be adding more posts and a portfolio from now on.
+The framework is close to complete. I'll probably only tweak things if I discover it's
+necessary for the additional posts and portfolio that I add to my site.
 
 #### Customizing
 
-If you clone or fork this repository for your own, you'll wanna...
+If you clone or fork this repository for your own, you'll want to..
 
 - Edit the `_config.yml` file, add a `_data/tokens.yml` file with your IDs & mail program,
-  and add author info for yourself in `_data/authors.yml`. (I have myself as author separate than
-  owner for when the project is forked, the new owner doesn't also become the new author if my posts
-  aren't deleted.)
-- Delete my posts dated in this millenium (or if you keep earthtv, contact 'em first)
-- Use the posts in the 31st century as guides for yours
+  and add author info for yourself in `_data/authors.yml`.
+- Use the posts in the 31st century as guides for yours. They're built by jekyll only when
+  the `--future` option is used.
 - Provide your images and continue tweaking to your heart's desire, or not.
-
 
 #### Building
 
-If you're building your site on Windows (like me) and you use WinSCP to synch with your remote site, you can use the
-`site.bat` file. To use that, first set up a properties file as described in the comments of `site.bat`. Then...
+If you're building your site on Windows (like me) and you use WinSCP to sync with your
+remote site, you can use the `site.bat` file. To use that, first set up a `.defaults` file
+as described in the comments of `site.bat`. Change the excludes list for your site. Then...
 
 - `site dev` : runs `jekyll serve --future --drafts` in development mode
 - `site preview` : runs `jekyll serve` in production mode
