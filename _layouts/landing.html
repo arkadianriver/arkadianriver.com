@@ -69,7 +69,13 @@
             endfor %}
           </section>
 
-        <!-- Three -->
+        <!-- Three -->{%
+      for post in site.posts %}{%
+        if post.tags contains "featured" %}{%
+          assign hasfeatured = true %}{%
+        endif %}{%
+      endfor %}{%
+      if hasfeatured == true %}
           <section id="landing_features" class="wrapper style3 special">
             <div class="inner">
               <header class="major">
@@ -95,7 +101,8 @@
                 endfor %}
               </ul>
             </div>
-          </section>
+          </section>{%
+      endif %}
 
         <!-- CTA -->
           <section id="cta" class="wrapper style4">

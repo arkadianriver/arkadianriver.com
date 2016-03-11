@@ -107,6 +107,10 @@ $baseurl: '{{ site.baseurl }}/images';
 		margin: 0 0 (_size(element-margin) * 0.5) 0;
 		text-transform: uppercase;
 
+		code {
+			text-transform: none;
+		}
+
 		a {
 			color: inherit;
 			text-decoration: none;
@@ -269,8 +273,6 @@ $baseurl: '{{ site.baseurl }}/images';
 			vertical-align: top;
 			display: inline-block;
 			width: 240px;
-			//height: 120px;
-			//border: solid 1px black;
 			border-radius: 8px;
 			list-style: none;
 			line-height: 1em;
@@ -278,7 +280,6 @@ $baseurl: '{{ site.baseurl }}/images';
 			padding: 0;
 			/*
 			&:first-child {
-				//border-left: 0;
 				margin-left: 0;
 			}
 			&.featured {
@@ -316,6 +317,7 @@ $baseurl: '{{ site.baseurl }}/images';
 				border-radius: 8px;
 				width: 100%;
 				height: 100%;
+				min-height: 110px;
 				line-height: _font(prose-lheight-small);
 				margin: 0;
   			padding: 0.8em;

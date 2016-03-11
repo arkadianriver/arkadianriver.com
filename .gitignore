@@ -4,6 +4,7 @@
 _site/
 _drafts/
 _data/tokens.yml
+_posts/2*
 
 # Windows image file caches
 Thumbs.db
