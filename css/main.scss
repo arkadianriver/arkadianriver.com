@@ -220,7 +220,6 @@ $baseurl: '{{ site.baseurl }}/images';
 	}
 
 	code {
-		border-radius: 4px;
 		font-family: _font(family-fixed);
 		font-size: _font(fixed-size);
 		letter-spacing: 0;
@@ -237,6 +236,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		margin: 0 0 _size(element-margin) 0;
 
 		code {
+			border-radius: 6px;
 			display: block;
 			line-height: _font(fixed-lheight);
 			background-color: #EEEEEB;
@@ -921,6 +921,28 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
+	@include breakpoint(small) {
+	// from https://css-tricks.com/responsive-data-tables/
+		/* Force table to not be like tables anymore */
+		table, thead, tbody, th, td, tr {
+			display: block;
+		}
+		/* Hide table headers (but not display: none;, for accessibility) */
+		thead tr {
+			position: absolute;
+			top: -9999px;
+			left: -9999px;
+		}
+		//tr { border: 1px solid #ccc; }
+		td {
+			/* Behave  like a "row" */
+			border: none;
+			//border-bottom: 1px solid #eee;
+			position: relative;
+			padding-left: 50%;
+		}
+	}
+
 /* Button */
 
 	input[type="submit"],
@@ -1367,6 +1389,8 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	}
 
+/* Breadcrumb */
+
 	.breadcrumb {
 		margin: 0;
 		padding: 0 2em 0 1.5em;
@@ -1421,7 +1445,8 @@ $baseurl: '{{ site.baseurl }}/images';
 			}
 
 			@include breakpoint(large) {
-				width: 90%;
+				//width: 90%;
+				width: 60em;
 			}
 
 			@include breakpoint(medium) {
@@ -2101,3 +2126,31 @@ $baseurl: '{{ site.baseurl }}/images';
 			}
 		}
 	}
+
+/* tags */
+	.techlist {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+		text-align: left;
+		vertical-align: top;
+
+		li {
+			vertical-align: top;
+			display: inline-block;
+			border-radius: 4px;
+			list-style: none;
+			background: _palette(accent6,fg);
+			padding: 0 6px 0 6px;
+			margin: 0 4px 8px 0;
+		}
+
+		.tech {
+			font-family: _font(ctrl-family);
+			font-size: _font(ctrl-size-xsmall);
+		}
+	}
+	.inner > .techlist {
+		margin-bottom: 2em;
+	}
+

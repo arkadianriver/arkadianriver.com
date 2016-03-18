@@ -26,24 +26,38 @@
                 <li><a href="#" class="button special">Activate</a></li>
               </ul>
               -->
-            </div>
-            <a href="#landing_pages" class="more scrolly">Continue</a>
+            </div>{%
+            if site.greeting %}
+            <a href="#greeting" class="more scrolly">Continue</a>{%
+            else %}
+            <a href="#landing_pages" class="more scrolly">Continue</a>{%
+            endif %}
           </section>
-
-        <!-- One --><!--
-          <section id="one" class="wrapper style1 special">
+          {%
+          if site.greeting %}
+        <!-- One -->
+          <section id="greeting" class="wrapper style1 special">
             <div class="inner">
               <header class="major">
-                <h2>{% if site.owner.name %}{{ site.owner.name }}{% else %}{{ site.title }}{% endif %}</h2>
-                <p>{% if site.greeting %}{{ site.greeting | markdownify }}{% else %}{{ site.description | markdownify }}{% endif %}</p>
+                <h2>{% if site.greeting.title %}{{ site.greeting.title }}{% else %}{{ site.title }}{% endif %}</h2>
+                <p>{% if site.greeting.text %}{{ site.greeting.text | markdownify }}{% else %}{{ site.description | markdownify }}{% endif %}</p>
               </header>
-              <ul class="icons major">
-                <li><span class="icon fa-diamond major style1"><span class="label">Lorem</span></span></li>
-                <li><span class="icon fa-heart-o major style2"><span class="label">Ipsum</span></span></li>
-                <li><span class="icon fa-code major style3"><span class="label">Dolor</span></span></li>
+              <ul class="icons major">{%
+              for socloc in site.social limit:3 %}{%
+                if socloc[1] %}{%
+                  if socloc[0] == 'email' %}
+                <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope major style1"
+                       ><span class="label">E-mail</span></a></li>{%
+                  else %}
+                <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }} major style1"
+                       ><span class="label">{{ socloc[0] }}</span></a></li>{%
+                  endif %}{%
+                endif %}{%
+              endfor %}
               </ul>
             </div>
-          </section> -->
+          </section>{%
+          endif %}
 
         <!-- Two -->
           <section id="landing_pages" class="wrapper alt style2">{%

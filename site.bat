@@ -3,7 +3,7 @@
 :: Shortcuts to develop, preview, and publish a site
 :: - Using WinSCP to publish from Windows
 ::
-:: Example for .defaults file
+:: Example for the _site.env file
 :: JKL_WINSCPPATH=C:\PROGRA~1\WinSCP
 :: JKL_LOCALSITEPATH=C:\Users\username\_git\myrepo\_site
 :: JKL_REMOTESITEPATH=/home/username/public_html
@@ -13,7 +13,7 @@
 ::
 :: -------------------------------------
 if x%1==x goto :oops
-for /f "tokens=1,2 delims==" %%i in (%USERPROFILE%\.jekyll\arkadianriver.com.defaults) do @set %%i=%%j
+for /f "tokens=1,2 delims==" %%i in (_site.env) do @set %%i=%%j
 
 if x%1==xdev goto serve
 if x%1==xprod goto prod
