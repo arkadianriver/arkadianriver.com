@@ -5,7 +5,10 @@ layout: default
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{% unless page.options contains 'minihead' %}
       <span id="post-date">{{ page.date  | date: "%-d %B %Y" }}</span><hr
         style="margin-top:3px;" />{% endunless %}
-      <!-- <div style="clear: both;margin-bottom:32px;"></div> -->
+      <!-- <div style="clear: both;margin-bottom:32px;"></div> -->{%
+      if page.categories contains 'works' and page.tags %}
+      {% include techlist.html %}{%
+      endif %}
       {{ content }}{% unless page.author == 'none' %}
       {% include author-block.html %}{% endunless %}{%
       if jekyll.environment == "production" %}{%

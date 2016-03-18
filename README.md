@@ -1,6 +1,6 @@
 ## arkadianriver.com
 
-I'm in the process of re-vamping my web-site with Jekyll.
+Still in progress.
 
 ```sh
 ✔ pushd new-site
@@ -16,12 +16,10 @@ human ditch existing-site --force=true
 popd
 ```
 
-### How to
-
 The framework is close to complete. I'll probably only tweak things if I discover it's
-necessary for the additional posts and portfolio that I add to my site.
+necessary for the additional posts and portfolio to come.
 
-#### Customizing
+### How to
 
 If you clone or fork this repository for your own, you'll want to..
 
@@ -31,11 +29,9 @@ If you clone or fork this repository for your own, you'll want to..
   the `--future` option is used.
 - Provide your images and continue tweaking to your heart's desire, or not.
 
-#### Building
-
 If you're building your site on Windows (like me) and you use WinSCP to sync with your
-remote site, you can use the `site.bat` file. To use that, first set up a `.defaults` file
-as described in the comments of `site.bat`. Change the excludes list for your site. Then...
+remote site, you can use the `site.bat` file. Set up a `_site.env` file
+as described in the comments of `site.bat` and change the excludes list for your site.
 
 - `site dev` : runs `jekyll serve --future --drafts` in development mode
 - `site preview` : runs `jekyll serve` in production mode

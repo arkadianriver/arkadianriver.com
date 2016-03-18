@@ -1,7 +1,11 @@
 # Welcome to Jekyll!
-#
+
+
 # In addition to these settings, there is a file _data/tokens-template.yml
-# that you'll want to customize for your site.
+# that you'll want to customize for your site. It's named 'tokens' because
+# that was it's original purpose, but because tokens.yml is .gitexcluded, it's
+# a good place to store your site-specific data that you'd rather not have
+# forked or cloned. Of course, that means you'd want to back it up elsewhere.
 
 # Site settings
 title: arkadianriver
@@ -15,9 +19,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site
 
 # on landing page
-greeting: |
-  Welcome!  
-  I hope you enjoy my collection
+greeting:
+  title: Welcome!  
+  text: I hope you enjoy my collection
 features-title: Featured topics
 closing-head: Thanks for visiting
 closing-para: Feel free to get in touch. Cheers!

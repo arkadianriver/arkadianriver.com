@@ -1,0 +1,49 @@
+---
+id: 1
+title: Works
+permalink: /works/
+excerpt: The portfolio&mdash;things I enjoyed creating
+image: pic02.jpg
+background-image: pic02.jpg
+---
+{%
+if site.social.linkedin-square %}
+<div class="table-wrapper">
+  <table class="alt"><tbody><tr><td style="text-align: center;">Visit my
+  <a target="_blank" href="{{ site.social.linkedin-square }}">LinkedIn profile</a></td>
+  </tr></tbody></table>
+</div>{%
+endif %}
+{%
+if site.categories.works %}
+<div class="table-wrapper">
+  <table>
+    <!--
+    <thead>
+      <tr>
+        <th>Work</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Skills used</th>
+      </tr>
+    </thead>
+    -->
+    <tbody>{%
+  for post in site.categories.works %}
+      <tr>
+        <td><b><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a><b></td>
+        <td>{{ post.date | date: "%b %Y" }}</td>
+        <td>{{ post.excerpt | strip_html | truncatewords: 12 }}</td>
+        <td>
+          <ul class="techlist">{%
+    for tag in post.tags %}
+            <li><span class="tech">{{ tag }}</span></li>{%
+    endfor %}
+          </ul>
+        </td>
+      </tr>{%
+  endfor %}
+    </tbody>
+  </table>
+</div>{%
+endif %}
