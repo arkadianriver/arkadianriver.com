@@ -7,6 +7,9 @@
 # a good place to store your site-specific data that you'd rather not have
 # forked or cloned. Of course, that means you'd want to back it up elsewhere.
 
+# Also, for your post bylines, add author info for yourself in `_data/authors.yml`.
+# (Using that method instead of site.owner, in case your posts get cloned with your repo.)
+
 # Site settings
 title: arkadianriver
 description: Flowing creativity &#x2192; Cascading bliss
@@ -19,14 +22,17 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site
 
 # on landing page
+# - set the greeting only if you want to display the first green section
 greeting:
   title: Welcome!  
   text: I hope you enjoy my collection
+# - title for your blog's featured posts
 features-title: Featured topics
+# - displayed at the bottom
 closing-head: Thanks for visiting
 closing-para: Feel free to get in touch. Cheers!
 
-# on all pages
+# on all pages (and the first three you list display with greeting, if included)
 social:
   twitter: https://twitter.com/arkadianriver
   github: https://github.com/arkadianriver
@@ -80,8 +86,12 @@ defaults:
       path: _pages
     values:
       layout: page
-      #permalink: /:slug/ # see github.com/jekyll/jekyll/issues/2280 for restriction
+      #permalink: /:slug/ # dunna work. See github.com/jekyll/jekyll/issues/2280
   - scope:
       path: _posts
     values:
       layout: post
+
+# to initialize arrays in assignments (assign myarr = site.empty_array)
+# (easier to grok than assign myarr = '' | split',')
+empty_array: []
