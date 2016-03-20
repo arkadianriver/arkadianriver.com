@@ -2,19 +2,86 @@
 layout: default
 ---
   <section class="wrapper{% if page.options contains 'minihead' %} minihead{% endif %} style5">
-    <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{% unless page.options contains 'minihead' %}
+    <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{%
+      if page.categories contains 'works'
+%}{%    comment %}
+          Construct exact same sorted_list as in works.html.
+  {%    endcomment
+%}{%    assign sorted_list = site.empty_array
+%}{%    assign items_grouped = site.categories.works | group_by: 'priority' | sort: 'name' | reverse
+%}{%    for group in items_grouped
+%}{%      assign items = group.items | sort: 'date' | reverse
+%}{%      for item in items
+%}{%        assign sorted_list = sorted_list | push: item
+%}{%      endfor
+%}{%    endfor
+%}{%    comment %}
+          - from https://gist.github.com/budparr/3e637e575471401d01ec
+          Find this post in sorted_list and get back/next
+  {%    endcomment
+%}{%    for work in sorted_list
+%}{%      if work.title == page.title
+%}{%        unless forloop.first
+%}{%          assign prevbutton = '&lt; Back'
+%}{%          assign prevurl = prev.url
+%}{%          assign prevtitle = prev.title
+%}{%        else
+%}{%          assign prevbutton = 'Index'
+%}{%          assign prevurl = '/works/' | prepend: baseurl
+%}{%          assign prevtitle = 'Workd Index'
+%}{%        endunless
+%}{%        unless forloop.last
+%}{%          assign next = sorted_list[forloop.index]
+%}{%          assign nextbutton = 'Next &gt;'
+%}{%          assign nexturl = next.url
+%}{%          assign nexttitle = next.title
+%}{%        else
+%}{%          assign nextbutton = 'Index'
+%}{%          assign nexturl = '/works/' | prepend: baseurl
+%}{%          assign nexttitle = 'Works Index'
+%}{%        endunless
+%}{%      endif
+%}{%      assign prev = work
+%}{%    endfor
+%}
+      <div class="backnext bntop">
+        {% include backnextnav.html %}
+      </div>{%
+      endif
+%}{%  unless page.options contains 'minihead' %}
       <span id="post-date">{{ page.date  | date: "%-d %B %Y" }}</span><hr
-        style="margin-top:3px;" />{% endunless %}
-      <!-- <div style="clear: both;margin-bottom:32px;"></div> -->{%
-      if page.categories contains 'works' and page.tags %}
-      {% include techlist.html %}{%
-      endif %}
-      {{ content }}{% unless page.author == 'none' %}
-      {% include author-block.html %}{% endunless %}{%
-      if jekyll.environment == "production" %}{%
-        unless page.options contains nocomment %}
-      {% include disqus.html %}{%
-        endunless %}{%
-      endif %}
+        style="margin-top:3px;" />{%
+      endunless
+%}{%  if page.categories contains 'works' and page.tags %}
+      <h4>Skills</h4>
+  {%    assign work = page
+%}{%    include techlist.html %}
+  {%  endif
+%}
+
+      {{ content }}{%
+
+
+      if page.categories contains 'works'
+%}
+      <div class="backnext bnbottom">
+        {% include backnextnav.html %}
+      </div>
+      <script>
+      document.body.onkeyup = function(e){
+        if (e.keyCode == '37') { window.location = '{{ prevurl }}'; }
+        if (e.keyCode == '39') { window.location = '{{ nexturl }}'; }
+      };
+      </script>{%
+      endif
+%}{%  unless page.author == 'none'
+%}{%    include author-block.html %}
+  {%  endunless
+%}{%  if jekyll.environment == "production"
+%}{%    unless page.options contains nocomment or page.categories contains 'works'
+%}{%      include disqus.html %}
+  {%    endunless
+%}{%  endif
+%}
     </div>
   </section>

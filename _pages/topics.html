@@ -1,5 +1,5 @@
 ---
-id: 2
+key: 2
 title: Topics
 permalink: /topics/
 options: fullwidth
@@ -9,12 +9,7 @@ background-image: pic01.jpg
 ---
 
   {% if site.posts %}{%
-      for post in site.posts %}{%
-        if post.tags contains "featured" %}{%
-          assign hasfeatured = true %}{%
-        endif %}{%
-      endfor %}{%
-      if hasfeatured == true %}
+      if site.tags.featured %}
   <hr style="margin:0 0 1em 0;" />
   <h4>Featured posts</h4>
   <ul class="post-list">{%

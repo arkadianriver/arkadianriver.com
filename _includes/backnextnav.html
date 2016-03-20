@@ -1,0 +1,16 @@
+        <div class="back">{%
+        if prevurl %}
+        <div class="bpointer"><a href="{{ prevurl }}"
+         class="button small" title="Back">{{ prevbutton }}</a></div>
+         <!-- class="icon fa-backward" title="Back"></a></div> -->
+        <div class="btitle"><a href="{{ prevurl }}">{{ prevtitle }}</a></div>{%
+        endif %}
+        </div>
+        <div class="next">{%
+        if nexturl %}
+        <div class="npointer"><a href="{{ nexturl }}"
+         class="button small" title="Next">{{ nextbutton }}</a></div>
+         <!-- class="icon fa-forward" title="Next"></a></div> -->
+        <div class="ntitle"><a href="{{ nexturl }}">{{ nexttitle }}</a></div>{%
+        endif %}
+        </div>

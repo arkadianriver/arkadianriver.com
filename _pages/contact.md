@@ -1,5 +1,5 @@
 ---
-id: 3
+key: 3
 title: Contact
 permalink: /contact/
 options: nolanding
