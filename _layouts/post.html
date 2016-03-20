@@ -4,50 +4,53 @@ layout: default
   <section class="wrapper{% if page.options contains 'minihead' %} minihead{% endif %} style5">
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{%
       if page.categories contains 'works'
-%}{%    comment %}
-          Construct exact same sorted_list as in works.html.
-  {%    endcomment
-%}{%    assign sorted_list = site.empty_array
-%}{%    assign items_grouped = site.categories.works | group_by: 'priority' | sort: 'name' | reverse
-%}{%    for group in items_grouped
-%}{%      assign items = group.items | sort: 'date' | reverse
-%}{%      for item in items
-%}{%        assign sorted_list = sorted_list | push: item
+%}{%    unless site.works_navlinks == 'none'
+%}{%      comment %}
+            Construct exact same sorted_list as in works.html.
+  {%      endcomment
+%}{%      assign sorted_list = site.empty_array
+%}{%      assign items_grouped = site.categories.works | group_by: 'priority' | sort: 'name' | reverse
+%}{%      for group in items_grouped
+%}{%        assign items = group.items | sort: 'date' | reverse
+%}{%        for item in items
+%}{%          assign sorted_list = sorted_list | push: item
+%}{%        endfor
 %}{%      endfor
-%}{%    endfor
-%}{%    comment %}
-          - from https://gist.github.com/budparr/3e637e575471401d01ec
-          Find this post in sorted_list and get back/next
-  {%    endcomment
-%}{%    for work in sorted_list
-%}{%      if work.title == page.title
-%}{%        unless forloop.first
-%}{%          assign prevbutton = '&lt; Back'
-%}{%          assign prevurl = prev.url
-%}{%          assign prevtitle = prev.title
-%}{%        else
-%}{%          assign prevbutton = 'Index'
-%}{%          assign prevurl = '/works/' | prepend: baseurl
-%}{%          assign prevtitle = 'Works Index'
-%}{%        endunless
-%}{%        unless forloop.last
-%}{%          assign next = sorted_list[forloop.index]
-%}{%          assign nextbutton = 'Next &gt;'
-%}{%          assign nexturl = next.url
-%}{%          assign nexttitle = next.title
-%}{%        else
-%}{%          assign nextbutton = 'Index'
-%}{%          assign nexturl = '/works/' | prepend: baseurl
-%}{%          assign nexttitle = 'Works Index'
-%}{%        endunless
-%}{%      endif
-%}{%      assign prev = work
-%}{%    endfor
-%}
+%}{%      comment %}
+            - from https://gist.github.com/budparr/3e637e575471401d01ec
+            Find this post in sorted_list and get back/next
+  {%      endcomment
+%}{%      for work in sorted_list
+%}{%        if work.title == page.title
+%}{%          unless forloop.first
+%}{%            assign prevbutton = '&lt; Back'
+%}{%            assign prevurl = prev.url
+%}{%            assign prevtitle = prev.title
+%}{%          else
+%}{%            assign prevbutton = 'Index'
+%}{%            assign prevurl = '/works/' | prepend: baseurl
+%}{%            assign prevtitle = 'Works Index'
+%}{%          endunless
+%}{%          unless forloop.last
+%}{%            assign next = sorted_list[forloop.index]
+%}{%            assign nextbutton = 'Next &gt;'
+%}{%            assign nexturl = next.url
+%}{%            assign nexttitle = next.title
+%}{%          else
+%}{%            assign nextbutton = 'Index'
+%}{%            assign nexturl = '/works/' | prepend: baseurl
+%}{%            assign nexttitle = 'Works Index'
+%}{%          endunless
+%}{%        endif
+%}{%        assign prev = work
+%}{%      endfor
+%}{%    endunless
+%}{%    if site.works_navlinks == 'top' or site.works_navlinks == 'both' %}
       <div class="backnext bntop">
         {% include backnextnav.html %}
       </div>{%
-      endif
+        endif
+%}{%  endif
 %}{%  unless page.options contains 'minihead' %}
       <span id="post-date">{{ page.date  | date: "%-d %B %Y" }}</span><hr
         style="margin-top:3px;" />{%
@@ -63,6 +66,7 @@ layout: default
 
 
       if page.categories contains 'works'
+%}{%    if site.works_navlinks == 'bottom' or site.works_navlinks == 'both'
 %}
       <div class="backnext bnbottom">
         {% include backnextnav.html %}
@@ -74,6 +78,7 @@ layout: default
       };
       </script>{%
       endif
+%}{%  endif
 %}{%  unless page.author == 'none'
 %}{%    include author-block.html %}
   {%  endunless

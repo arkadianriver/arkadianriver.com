@@ -2223,3 +2223,10 @@ $baseurl: '{{ site.baseurl }}/images';
   }
 
   .nobullet { list-style-type: none; }
+
+  .works_inprogress {
+  	font-family: _font(prose-family);
+  	width:100%;
+  	text-align:center;
+  	margin-bottom:16px;
+  }
