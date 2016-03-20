@@ -14,6 +14,10 @@ extra-credit: |
   <li><i>Excellent contribution:</i> <a target="_blank"
   href="http://contributor.url">Generous Contributor</a>,
   with very generous open license</li>
+image-credit: |
+  <li><img class="imgref" src="/path/to/images/nicepic.png" />
+  <a target="_blank" href="http://artistsite.com">Artist</a>,
+  generous open creative license</li>  
 
 # Any other site-specific things you'd rather have .gitexcluded
 # ...
