@@ -32,6 +32,13 @@ features-title: Featured topics
 closing-head: Thanks for visiting
 closing-para: Feel free to get in touch. Cheers!
 
+# For 'works' portfolio posts, choose where to put back and next links:
+# top, bottom, both, none
+works_navlinks: bottom
+
+# expecting more works? mark your list as in-progress
+works_in_progress: yes
+
 # on all pages (and the first three you list display with greeting, if included)
 social:
   twitter: https://twitter.com/arkadianriver

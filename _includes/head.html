@@ -8,19 +8,30 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ "/css/ie8.css" | prepend: site.baseurl }}" /><![endif]-->
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->{%
-  if page.background-image %}
+  if page.background-image %}{%
+    assign first_char = page.background-image | slice: 0 %}{%
+    if first_char == '/' %}{%
+      assign second_char = page.background-image | slice: 1 %}{%
+      if second_char == '/' %}{% comment %}                     // remote                 {% endcomment %}{%
+        assign imageurl = page.background-image %}{%
+      else %}{% comment %}                                      // local, not in /images/ {% endcomment %}{%
+        assign imageurl = page.background-image | prepend: site.baseurl %}{%
+      endif %}{%
+    else %}{% comment %}                                        // local, in /images/     {% endcomment %}{%
+      assign imageurl = page.background-image | prepend: "/images/" | prepend: site.baseurl %}{%
+    endif %}
   <style>
   #main > header {
-    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
-    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
-    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+    background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ imageurl }}");
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ imageurl }}");
+    background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ imageurl }}");
+    background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("{{ imageurl }}");
   }
   </style>
   <!--[if lte IE 9]>
   <style>
   #main > header {
-    background-image: url("{{ page.background-image | prepend: "/images/" | prepend: site.baseurl }}");
+    background-image: url("{{ imageurl }}");
   }
   </style>
   -->{%
