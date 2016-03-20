@@ -210,6 +210,10 @@ $baseurl: '{{ site.baseurl }}/images';
     .actions * {
       font-family: _font(ctrl-family);
     }
+    li {
+      margin-left: 0.2em;
+      padding-left: 0.4em;
+    }
   }
 
 	blockquote {
@@ -683,7 +687,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	ul {
 		list-style: disc;
-		margin: 0 0 _size(element-margin) 0;
+		margin: 0 0 _size(element-margin) 0em;
 		padding-left: 1em;
 
 		li {
@@ -2142,7 +2146,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			list-style: none;
 			background: _palette(accent6,fg);
 			padding: 0 6px 0 6px;
-			margin: 0 4px 8px 0;
+			margin: 0 4px 10px 0;
 		}
 
 		.tech {
@@ -2154,3 +2158,68 @@ $baseurl: '{{ site.baseurl }}/images';
 		margin-bottom: 2em;
 	}
 
+/* back/next links in works */
+
+  .backnext {
+  	width: 100%;
+  	padding: 6px;
+  	text-align: center;
+  	vertical-align: baseline;
+
+  	&.bntop {
+  	  margin: 0 0 16px 0;
+  	}
+  	&.bnbottom {
+  	  margin: 16px 0 0 0;
+  	}
+
+  	@include breakpoint(small) {
+  	  padding-left: 0;
+  	}
+
+  	.back {
+  	  text-align: right;
+  	  margin-right: 6px;
+
+  	  @include breakpoint(small) {
+  	  	margin-bottom: 9px;
+  	  }
+  	}
+  	.next {
+  	  text-align: left;
+  	  margin-left: 6px;
+  	}
+  	.back, .next {
+  		width: 40%;
+  		display: inline-block;
+
+  		@include breakpoint(small) {
+  			display: block;
+  			width: 100%;
+  			text-align: center;
+  			margin-left: 0;
+  			margin-right: 0;
+  		}
+  	}
+  	.bpointer, .npointer {
+  		> a {
+  			text-decoration: none;
+  		}
+  	}
+  	.btitle {
+  		font-family: _font(prose-family);
+  		padding-right: 36px;
+  		@include breakpoint(small) {
+  			padding-right: 0;
+  		}
+  	}
+  	.ntitle {
+  		font-family: _font(prose-family);
+  		padding-left: 32px;
+  		@include breakpoint(small) {
+  			padding-left: 0;
+  		}
+  	}
+  }
+
+  .nobullet { list-style-type: none; }
