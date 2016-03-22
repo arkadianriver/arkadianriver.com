@@ -3,7 +3,7 @@
 :: Shortcuts to develop, preview, and publish a site
 :: - Using WinSCP to publish from Windows
 ::
-:: Example for the _site.env file
+:: Example for the _site.env file:
 :: JKL_WINSCPPATH=C:\PROGRA~1\WinSCP
 :: JKL_LOCALSITEPATH=C:\Users\username\_git\myrepo\_site
 :: JKL_REMOTESITEPATH=/home/username/public_html
@@ -11,6 +11,12 @@
 :: JKL_REMOTEUSER=myremoteuser
 :: JKL_REMOTEEXCLUDES=admin/; anotherapp/; myimportantremotefile.html;
 ::
+:: **This last one and the remote site path are IMPORTANT**
+::   This uses 'synchronize', which deletes remote files that are not on
+::   your local site. Be _sure_ to list remote stuff you want to preserve
+::   in JKL_REMOTEEXCLUDES. See https://winscp.net/eng/docs/file_mask
+::   And be sure your remote path is to the web site directory only.
+::   You've been warned. I'm not responsible for loss of data. :-P
 :: -------------------------------------
 if x%1==x goto :oops
 for /f "tokens=1,2 delims==" %%i in (_site.env) do @set %%i=%%j
