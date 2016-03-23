@@ -45,6 +45,11 @@
   <link rel="stylesheet" href="{{ include | prepend: site.baseurl }}" />{%
       endif %}{%
     endfor %}{%
+  endif %}{%
+  if page.style %}
+<style>
+{{ page.style }}
+</style>{%
   endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 </head>
