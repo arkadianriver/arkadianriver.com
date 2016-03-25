@@ -4,6 +4,7 @@
 :: - Using WinSCP to publish from Windows
 ::
 :: Example for the _site.env file:
+:: JKL_MYCONFIGS=--config _config.yml,_my/config.yml
 :: JKL_WINSCPPATH=C:\PROGRA~1\WinSCP
 :: JKL_LOCALSITEPATH=C:\Users\username\_git\myrepo\_site
 :: JKL_REMOTESITEPATH=/home/username/public_html
@@ -32,17 +33,17 @@ goto :eof
 
 :serve
 set JEKYLL_ENV=development
-call jekyll serve --watch --drafts --future
+call jekyll serve %JKL_MYCONFIGS% --watch --drafts --future
 goto :done
 
 :prod
 set JEKYLL_ENV=production
-call jekyll build
+call jekyll build %JKL_MYCONFIGS%
 goto :done
 
 :preview
 set JEKYLL_ENV=production
-call jekyll serve
+call jekyll serve %JKL_MYCONFIGS%
 goto :done
 
 :publish
