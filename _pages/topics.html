@@ -31,7 +31,9 @@ background-image: pic01.jpg
   <hr style="margin:1em 0 1em 0;" />
   <ul class="post-list">{%
       for post in site.categories.topics %}{%
-        unless post.tags contains "featured" %}
+        assign lastcat = post.categories | last %}{%
+        if lastcat == 'topics' or post.permalink %}{%
+          unless post.tags contains "featured" %}
       <li>
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
           <div class="container">
@@ -41,7 +43,8 @@ background-image: pic01.jpg
           </div>
         </a>
       </li>{%
-        endunless %}{%
+          endunless %}{%
+        endif %}{%
       endfor %}
   </ul>
   {% endif %}
