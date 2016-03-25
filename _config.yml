@@ -32,9 +32,9 @@ features-title: Featured topics
 closing-head: Thanks for visiting
 closing-para: Feel free to get in touch. Cheers!
 
-# For 'works' portfolio posts, choose where to put back and next links:
+# choose where to put back and next links:
 # top, bottom, both, none
-works_navlinks: bottom
+navlinks: bottom
 
 # expecting more works? mark your list as in-progress
 works_in_progress: yes
@@ -96,6 +96,10 @@ defaults:
       #permalink: /:slug/ # dunna work. See github.com/jekyll/jekyll/issues/2280
   - scope:
       path: _posts
+    values:
+      layout: post
+  - scope:
+      path: _drafts
     values:
       layout: post
 
