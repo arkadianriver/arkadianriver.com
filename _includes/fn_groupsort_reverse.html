@@ -1,0 +1,18 @@
+{%    comment %}
+        # Get a grouped and sorted array of posts
+        #   include-params: unsorted, groupby, sortby
+        #   returns: sorted_list array
+        # Grouped sort from:
+        #   https://gist.github.com/budparr/0ad4a7449f9604f47eec
+        #   Jekyll group_by structures have the form
+        #   [{ 'name'=>group_by_field, 'items'=>[items_in_group] },...]
+  {%  endcomment
+%}{%  assign sorted_list = site.empty_array
+%}{%  assign items_grouped = include.unsorted | group_by: include.groupby | sort: 'name' | reverse
+%}{%  for group in items_grouped
+%}{%    assign items = group.items | sort: include.sortby | reverse
+%}{%    for item in items
+%}{%      assign sorted_list = sorted_list | push: item
+%}{%    endfor
+%}{%  endfor
+%}

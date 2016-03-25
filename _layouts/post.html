@@ -3,53 +3,29 @@ layout: default
 ---
   <section class="wrapper{% if page.options contains 'minihead' %} minihead{% endif %} style5">
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{%
-      if page.categories contains 'works'
-%}{%    unless site.works_navlinks == 'none'
-%}{%      comment %}
-            Construct exact same sorted_list as in works.html.
-  {%      endcomment
+      unless site.navlinks == 'none'
+%}{%    if page.categories contains 'works'
+%}{%      assign perma = '/works/'
+%}{%      include fn_groupsort_reverse.html unsorted=site.categories.works groupby='priority' sortby='date'
+%}{%    endif
+%}{%    comment %}
+          # <exclude> for now due to
+          # comparison of Jekyll::Drops::DocumentDrop with Jekyll::Drops::DocumentDrop failed
+  {%    if page.categories.first == 'topics' and page.categories.last != 'topics'
+%}{%      assign perma = page.categories | join: '/' | prepend: '/' | append: '/'
 %}{%      assign sorted_list = site.empty_array
-%}{%      assign items_grouped = site.categories.works | group_by: 'priority' | sort: 'name' | reverse
-%}{%      for group in items_grouped
-%}{%        assign items = group.items | sort: 'date' | reverse
-%}{%        for item in items
-%}{%          assign sorted_list = sorted_list | push: item
-%}{%        endfor
-%}{%      endfor
-%}{%      comment %}
-            - from https://gist.github.com/budparr/3e637e575471401d01ec
-            Find this post in sorted_list and get back/next
-  {%      endcomment
-%}{%      for work in sorted_list
-%}{%        if work.title == page.title
-%}{%          unless forloop.first
-%}{%            assign prevbutton = '&lt; Back'
-%}{%            assign prevurl = prev.url
-%}{%            assign prevtitle = prev.title
-%}{%          else
-%}{%            assign prevbutton = 'Index'
-%}{%            assign prevurl = '/works/' | prepend: baseurl
-%}{%            assign prevtitle = 'Works Index'
-%}{%          endunless
-%}{%          unless forloop.last
-%}{%            assign next = sorted_list[forloop.index]
-%}{%            assign nextbutton = 'Next &gt;'
-%}{%            assign nexturl = next.url
-%}{%            assign nexttitle = next.title
-%}{%          else
-%}{%            assign nextbutton = 'Index'
-%}{%            assign nexturl = '/works/' | prepend: baseurl
-%}{%            assign nexttitle = 'Works Index'
-%}{%          endunless
+%}{%      for topic in site.categories.topics
+%}{%        if topic.categories.last == page.categories.last
+%}{%          assign sorted_list = sorted_list | push: topic
 %}{%        endif
-%}{%        assign prev = work
 %}{%      endfor
-%}{%    endunless
-%}{%    if site.works_navlinks == 'top' or site.works_navlinks == 'both' %}
-      <div class="backnext bntop">
-        {% include backnextnav.html %}
-      </div>{%
-        endif
+%}{%      assign sorted_list = sorted_list | sort
+%}{%    endif
+%}        # </endexclude>
+  {%    endcomment
+%}{%  endunless
+%}{%  if sorted_list and (site.navlinks == 'top' or site.navlinks == 'both')
+%}{%    include fn_sortednav.html posclass='btntop'
 %}{%  endif
 %}{%  unless page.options contains 'minihead' %}
       <span id="post-date">{{ page.date  | date: "%-d %B %Y" }}</span><hr
@@ -65,19 +41,11 @@ layout: default
       {{ content }}{%
 
 
-      if page.categories contains 'works'
-%}{%    if site.works_navlinks == 'bottom' or site.works_navlinks == 'both'
-%}
-      <div class="backnext bnbottom">
-        {% include backnextnav.html %}
-      </div>
-      <script>
-      document.body.onkeyup = function(e){
-        if (e.keyCode == '37') { window.location = '{{ prevurl }}'; }
-        if (e.keyCode == '39') { window.location = '{{ nexturl }}'; }
-      };
-      </script>{%
-      endif
+      if sorted_list and (site.navlinks == 'bottom' or site.navlinks == 'both')
+%}{%    unless perma
+%}{%      assign perma = '/topics/'
+%}{%    endunless
+%}{%    include fn_sortednav.html posclass='btnbottom'
 %}{%  endif
 %}{%  unless page.author == 'none'
 %}{%    include author-block.html %}

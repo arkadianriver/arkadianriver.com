@@ -19,19 +19,7 @@ if site.categories.works %}
 <div class="table-wrapper">
   <table>
     <tbody>{%
-      comment %}
-        - from https://gist.github.com/budparr/0ad4a7449f9604f47eec
-        Jekyll group_by structures have the form
-        [{ 'name'=>group_by_field, 'items'=>[items_in_group] },...]
-  {%  endcomment
-%}{%  assign sorted_list = site.empty_array
-%}{%  assign items_grouped = site.categories.works | group_by: 'priority' | sort: 'name' | reverse
-%}{%  for group in items_grouped
-%}{%    assign items = group.items | sort: 'date' | reverse
-%}{%    for item in items
-%}{%      assign sorted_list = sorted_list | push: item
-%}{%    endfor
-%}{%  endfor
+      include fn_groupsort_reverse.html unsorted=site.categories.works groupby='priority' sortby='date'
 %}{%  for work in sorted_list %}
       <tr>
         <td><b><a href="{{ work.url | prepend: site.baseurl }}">{{ work.title }}</a></b></td>

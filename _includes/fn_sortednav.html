@@ -1,0 +1,42 @@
+{%      comment %}
+          # Find this post in sorted_list and get back/next
+          #   depends: sorted_list of posts
+          #   include-params: posclass - indicates whether top or bottom style
+          #   returns: displays navigation using included backnextnav.html
+          # Original idea:
+          #   https://gist.github.com/budparr/3e637e575471401d01ec
+  {%    endcomment
+%}{%    for post in sorted_list
+%}{%      if post.title == page.title
+%}{%        unless forloop.first
+%}{%          assign prevbutton = '&lt; Back'
+%}{%          assign prevurl = prev.url
+%}{%          assign prevtitle = prev.title
+%}{%        else
+%}{%          assign prevbutton = 'Index'
+%}{%          assign prevurl = perma | prepend: baseurl
+%}{%          assign prevtitle = 'Works Index'
+%}{%        endunless
+%}{%        unless forloop.last
+%}{%          assign next = sorted_list[forloop.index]
+%}{%          assign nextbutton = 'Next &gt;'
+%}{%          assign nexturl = next.url
+%}{%          assign nexttitle = next.title
+%}{%        else
+%}{%          assign nextbutton = 'Index'
+%}{%          assign nexturl = perma | prepend: baseurl
+%}{%          assign nexttitle = 'Works Index'
+%}{%        endunless
+%}{%      endif
+%}{%      assign prev = post
+%}{%    endfor
+%}
+      <div class="backnext {{ include.posclass }}">
+        {% include backnextnav.html %}
+      </div>
+      <script>
+      document.body.onkeyup = function(e){
+        if (e.keyCode == '37') { window.location = '{{ prevurl }}'; }
+        if (e.keyCode == '39') { window.location = '{{ nexturl }}'; }
+      };
+      </script>
