@@ -12,6 +12,8 @@ Still in progress.
 * human cherry-pick -from existing-site
 human ditch existing-site
 > Are you sure? n
+human considers "meaning of life"
+> "meaning of life" unknown.
 human ditch existing-site --force=true
 popd
 ```
