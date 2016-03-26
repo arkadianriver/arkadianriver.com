@@ -8,10 +8,7 @@ layout: default
 %}{%      assign perma = '/works/'
 %}{%      include fn_groupsort_reverse.html unsorted=site.categories.works groupby='priority' sortby='date'
 %}{%    endif
-%}{%    comment %}
-          # <exclude> for now due to
-          # comparison of Jekyll::Drops::DocumentDrop with Jekyll::Drops::DocumentDrop failed
-  {%    if page.categories.first == 'topics' and page.categories.last != 'topics'
+%}{%    if page.categories.first == 'topics' and page.categories.last != 'topics'
 %}{%      assign perma = page.categories | join: '/' | prepend: '/' | append: '/'
 %}{%      assign sorted_list = site.empty_array
 %}{%      for topic in site.categories.topics
@@ -21,8 +18,6 @@ layout: default
 %}{%      endfor
 %}{%      assign sorted_list = sorted_list | sort
 %}{%    endif
-%}        # </endexclude>
-  {%    endcomment
 %}{%  endunless
 %}{%  if sorted_list and (site.navlinks == 'top' or site.navlinks == 'both')
 %}{%    include fn_sortednav.html posclass='btntop'
