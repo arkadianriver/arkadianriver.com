@@ -16,7 +16,7 @@ layout: default
 %}{%          assign sorted_list = sorted_list | push: topic
 %}{%        endif
 %}{%      endfor
-%}{%      assign sorted_list = sorted_list | sort
+%}{%      assign sorted_list = sorted_list | sort: 'date'
 %}{%    endif
 %}{%  endunless
 %}{%  if sorted_list and (site.navlinks == 'top' or site.navlinks == 'both')
