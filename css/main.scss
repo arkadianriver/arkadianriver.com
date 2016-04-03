@@ -2233,3 +2233,7 @@ $baseurl: '{{ site.baseurl }}/images';
   	text-align:center;
   	margin-bottom:16px;
   }
+
+{% if site.custom_extensions == 'yes' %}
+{% include _my/custom.scss %}
+{% endif %}

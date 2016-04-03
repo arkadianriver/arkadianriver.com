@@ -31,6 +31,8 @@ If you clone or fork this repository for your own, you'll want to..
   the `--future` option is used.
 - Provide your images and continue tweaking to your heart's desire, or not.
 
+You can run `ruby compose.rb` to create new draft posts.
+
 If you're building your site on Windows (like me) and you use WinSCP to sync with your
 remote site, you can use the `site.bat` file. Set up a `_site.env` file
 as described in the comments of `site.bat` and change the excludes list for your site.
