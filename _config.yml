@@ -32,13 +32,6 @@ features-title: Featured topics
 closing-head: Thanks for visiting
 closing-para: Feel free to get in touch. Cheers!
 
-# choose where to put back and next links:
-# top, bottom, both, none
-navlinks: bottom
-
-# expecting more works? mark your list as in-progress
-works_in_progress: yes
-
 # on all pages (and the first three you list display with greeting, if included)
 social:
   twitter: https://twitter.com/arkadianriver
@@ -81,12 +74,32 @@ social:
   #tripadvisor:
   #amazon:
 
+# if you use this repo's `ruby compose.rb` script to initiate new posts, put the
+# command to invoke your editor here. (I didn't spend time dealing with spaces
+# and full paths of the various OSes in compose.rb. For my Windows
+# environment, I just put a subl.cmd file in my PATH that points to the full
+# path to Sublime's subl.exe.) Also, put your most common post extension.
+compose:
+  editor: subl
+  extension: md
+
+# choose where to put back and next links:
+# top, bottom, both, none
+navlinks: bottom
+
+# expecting more works? mark your list as in-progress
+works_in_progress: yes
+
+# If you have custom extensions, specifically includes/_my/custom.scss,
+# set this to 'yes'
+custom_extensions: 'no'
+
 # Build settings
 permalink: /:categories/:title.html
 markdown: kramdown
 #sass:
 #  style: compressed
-exclude: ['site.bat']
+exclude: ['site.bat','compose.rb','README.md']
 include: ['_pages','.htaccess']
 defaults:
   - scope:
