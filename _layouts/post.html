@@ -5,11 +5,15 @@ layout: default
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{%
       unless site.navlinks == 'none'
 %}{%    if page.categories contains 'works'
-%}{%      assign perma = '/works/'
+%}{%      assign idxperma = '/works/'
+%}{%      assign idxtitle = 'Works Index'
+%}{%      assign idxbutton = 'Index'
 %}{%      include fn_groupsort_reverse.html unsorted=site.categories.works groupby='priority' sortby='date'
 %}{%    endif
 %}{%    if page.categories.first == 'topics' and page.categories.last != 'topics'
-%}{%      assign perma = page.categories | join: '/' | prepend: '/' | append: '/'
+%}{%      assign idxperma = page.categories | join: '/' | prepend: '/' | append: '/'
+%}{%      assign idxtitle = 'Start page'
+%}{%      assign idxbutton = 'Start'
 %}{%      assign sorted_list = site.empty_array
 %}{%      for topic in site.categories.topics
 %}{%        if topic.categories.last == page.categories.last

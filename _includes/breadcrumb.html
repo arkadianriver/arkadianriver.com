@@ -3,9 +3,11 @@
   if page.layout == 'page' %}
   <li>{{ page.title }}</li>{%
   elsif page.layout == 'post' %}{%
+    assign lastcat = page.categories | last %}{%
     for cat in page.categories %}{%
-      capture urlstr %}{{ urlstr }}/{{ cat }}{% endcapture %}
-  <li style="text-transform: capitalize;"><a href="{{ site.baseurl }}{{ urlstr }}">{{ cat }}</a></li>{%
+      unless page.permalink and cat == lastcat %}{%
+        capture urlstr %}{{ urlstr }}/{{ cat }}{% endcapture %}
+  <li style="text-transform: capitalize;"><a href="{{ site.baseurl }}{{ urlstr }}">{{ cat }}</a></li>{%  endunless %}{%
     endfor %}
   <li>{{ page.title }}</li>{%
   endif %}
