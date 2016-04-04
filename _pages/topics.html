@@ -8,10 +8,10 @@ image: pic01.jpg
 background-image: pic01.jpg
 ---
 
-  {% if site.posts %}{%
+{%  if site.posts %}{%
       if site.tags.featured %}
   <hr style="margin:0 0 1em 0;" />
-  <h4>Featured posts</h4>
+  <h4>Featured</h4>
   <ul class="post-list">{%
         for post in site.categories.topics %}{%
           if post.tags contains "featured" %}
@@ -29,22 +29,27 @@ background-image: pic01.jpg
   </ul>{%
       endif %}
   <hr style="margin:1em 0 1em 0;" />
-  <ul class="post-list">{%
-      for post in site.categories.topics %}{%
-        assign lastcat = post.categories | last %}{%
-        if lastcat == 'topics' or post.permalink %}{%
-          unless post.tags contains "featured" %}
-      <li>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
-          <div class="container">
-            <p class="post-title">{{ post.title }}</p>
-            <p class="post-date">{{ post.date | date: "%Y-%m-%d" }}</p>
-            <p class="post-desc">{{ post.excerpt | strip_html | truncatewords: 12 }}</p>
-          </div>
-        </a>
-      </li>{%
-          endunless %}{%
-        endif %}{%
-      endfor %}
-  </ul>
-  {% endif %}
+
+{%    comment %}
+      # ripped from http://mikerowecode.com/2010/08/jekyll_archives_grouped_by_year.html
+      # odd, intermixing head in a list, but it works okay in Chrome, FF, Edge
+{%    endcomment %}
+    <ul style="list-style-type: none;">{%
+      for post in site.categories.topics
+%}{%    unless post.next %}
+      <br /><h5>{{ post.date | date: "%Y" }}</h5>{%
+        else
+%}{%      capture year %}{{ post.date | date: "%Y" }}{% endcapture
+%}{%      capture nyear %}{{ post.next.date | date: "%Y" }}{% endcapture
+%}{%      if year != nyear %}
+      <br /><h5>{{ post.date | date: "%Y" }}</h5>{%
+          endif
+%}{%    endunless %}
+      <li style="padding-bottom: 6px;"><code>[{{ post.date | date: "%d %b" }}]</code>&nbsp;
+        <a href="{{ post.url }}" style="white-space: nowrap;"><b>{{ post.title }}</b></a>&nbsp;
+          {{ post.excerpt | strip_html | truncatewords: 12 }}</li>{%
+      endfor
+%}
+    </ul>
+
+{%  endif %}

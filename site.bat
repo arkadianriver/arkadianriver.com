@@ -23,17 +23,23 @@ if x%1==x goto :oops
 for /f "tokens=1,2 delims==" %%i in (_site.env) do @set %%i=%%j
 
 if x%1==xdev goto serve
+if x%1==xdevnof goto nofuture
 if x%1==xprod goto prod
 if x%1==xpreview goto preview
 if x%1==xpublish goto write
 echo Nothing to do.
 :oops
-echo usage: %~nx0 [dev^|prod^|preview^|publish]
+echo usage: %~nx0 [dev^|devnof^|prod^|preview^|publish]
 goto :eof
 
 :serve
 set JEKYLL_ENV=development
 call jekyll serve %JKL_MYCONFIGS% --watch --drafts --future
+goto :done
+
+:nofuture
+set JEKYLL_ENV=development
+call jekyll serve %JKL_MYCONFIGS% --watch --drafts
 goto :done
 
 :prod

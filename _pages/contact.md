@@ -11,6 +11,7 @@ script: |
   $("#sendemail").validate();
 ---
 
+{::options parse_block_html="false" /}
 <section>
   <form id="sendemail" method="post" action="{{ site.data.tokens.mailaction }}">
     <div class="row uniform">
