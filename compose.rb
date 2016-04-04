@@ -33,9 +33,14 @@ This site has two types of posts:
 
 eoh
 print "Is this a (t)opic or (w)ork? [t]: "
-type = gets
-type.strip!
-if type=='' then type = 't' end
+type = ''
+while true
+  type = gets
+  type.strip!
+  unless (type == '' or /^[tw]$/.match(type)) then redo end
+  if type=='' then type = 't' end
+  break
+end
 
 categories = Array.new
 if type=='w'
@@ -46,10 +51,15 @@ Higher priority works are listed first and also get the same priority value
 for the site map. 1.0 is the highest possible value, and you probably don't
 want it to have a priority under 0.5. What priority should it have?
   eoh
-  print "(0.5 - 1.0) [0.7]:"
-  priority = gets
-  priority.strip!
-  if priority == '' then priority = '0.7' end
+  priority = ''
+  while true
+    print "(0 - 1.0) [0.7]: "
+    priority = gets
+    priority.strip!
+    unless (priority == '' or (priority.to_f >= 0.0 and priority.to_f <= 1.0)) then redo end
+    if priority == '' then priority = '0.7' end
+    break
+  end
 else
   categories << 'topics'
   puts <<-eoh
@@ -57,10 +67,15 @@ else
 The first 10 featured posts are listed on the front page and get a higher
 priority in the site map. Is this a featured post?
   eoh
-  print "(y or [n]): "
-  featured = gets
-  featured.strip!
-  if featured=='' then featured = nil end
+  featured = ''
+  while true
+    print "(y or [n]): "
+    featured = gets
+    featured.strip!
+    unless (featured == '' or /^[yn]$/.match(featured)) then redo end
+    if (featured=='' or featured=='n') then featured = nil end
+    break
+  end
   puts <<-eoh
 
 If this is a part of a series of posts that you want to be displayed with
@@ -93,11 +108,16 @@ with the same name as the sub-category so that the breadcrumb looks nice.
       end
     end
     categories << subcat
-    print "\nIs this your first topic in the sub-category? (y or [n]): "
-    isfirst = gets
-    isfirst.strip!
-    if isfirst == 'y'
-      perma = '/' + categories.join('/') + '/'
+    isfirst = ''
+    while true
+      print "\nIs this your first topic in the sub-category? (y or [n]): "
+      isfirst = gets
+      isfirst.strip!
+      unless (isfirst == '' or /^[yn]$/.match(isfirst)) then redo end
+      if isfirst == 'y'
+        perma = '/' + categories.join('/') + '/'
+      end
+      break
     end
   end
 end
@@ -115,6 +135,7 @@ excerpt = gets
 excerpt.strip!
 
 puts <<-eoc
+
 If you want an image in the banner, put the image in the /images folder
 and type the name here. If it's in another folder, prefix the image with
 '/' and the folder name, such as /unique/images/mine.jpg. For no image,
@@ -125,6 +146,7 @@ back = gets
 back = back.strip! == '' ? nil : back
 
 puts <<-eoc
+
 There are a few other options you could add, such as a mini-heading, a
 full-width body, and a custom icon for featured posts on the front page.
 For a full description of options, see the "Guide for New Posts" topic
@@ -163,7 +185,7 @@ if (File.exist?("./_drafts/" + fname) or File.exist?("./_posts/" + fname))
   puts "Sorry you went through all that trouble, but a file with that name exists!"
 else
   File.open("./_drafts/" + fname, 'w') do |f|
-    f.puts "----"
+    f.puts "---"
     f.puts "title: " + title
     f.puts "excerpt: " + excerpt
     if (featured) then f.puts "tags: featured" end
@@ -174,10 +196,10 @@ else
       f.puts "  - " + cat
     end
     if (back) then f.puts "background-image: " + back end
-    f.puts "#The date/lastupdated are optional"
+    f.puts "#date/lastupdated are optional"
     f.puts "#date: " + tstamp
     f.puts "#lastupdated: " + tstamp
-    f.puts "----"
+    f.puts "---"
   end
 end
 
