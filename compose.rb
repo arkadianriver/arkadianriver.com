@@ -10,15 +10,21 @@
 
 Gem.win_platform? ? (system "cls") : (system "clear")
 
-# for getting the name of your editor at the end
+# for getting the name of your editor and extension
 require 'yaml'
 cfgfile = YAML.load_file('_config.yml')
+
+# getting the default author (first in authors file if exist)
+authfile = "./_data/authors.yml"
+if (File.exist?(authfile))
+  author = YAML.load_file(authfile).keys[0]
+end
 
 # for print stmt buffers
 STDOUT.sync = true
 
 #
-# Let's start the long interview process
+# interview
 #
 
 puts <<-eoh
@@ -134,6 +140,13 @@ print "\nPost excerpt: "
 excerpt = gets
 excerpt.strip!
 
+if type == 't'
+  print "\nPost author [" + author + "]: "
+  theauth = gets
+  theauth.strip!
+  if theauth == '' then theauth = author end
+end
+
 puts <<-eoc
 
 If you want an image in the banner, put the image in the /images folder
@@ -168,8 +181,8 @@ end
 tslug.downcase!
 
 t = Time.new
-tstamp = t.strftime("%Y-%d-%m %H:%M:%S")
-dstamp = t.strftime("%Y-%d-%m")
+tstamp = t.strftime("%Y-%m-%d %H:%M:%S")
+dstamp = t.strftime("%Y-%m-%d")
 
 ext = cfgfile['compose']['extension'] ? cfgfile['compose']['extension'] : 'md'
 
@@ -188,6 +201,7 @@ else
     f.puts "---"
     f.puts "title: " + title
     f.puts "excerpt: " + excerpt
+    unless (theauth.to_s == '') then f.puts "author: " + theauth end
     if (featured) then f.puts "tags: featured" end
     if (priority) then f.puts "priority: " + priority end
     if (perma) then f.puts "permalink: " + perma end
