@@ -30,21 +30,15 @@ background-image: pic01.jpg
       endif %}
   <hr style="margin:1em 0 1em 0;" />
 
-{%    comment %}
-      # ripped from http://mikerowecode.com/2010/08/jekyll_archives_grouped_by_year.html
-      # odd, intermixing head in a list, but it works okay in Chrome, FF, Edge
-{%    endcomment %}
     <ul style="list-style-type: none;">{%
-      for post in site.categories.topics
-%}{%    unless post.next %}
-      <br /><h5>{{ post.date | date: "%Y" }}</h5>{%
-        else
-%}{%      capture year %}{{ post.date | date: "%Y" }}{% endcapture
-%}{%      capture nyear %}{{ post.next.date | date: "%Y" }}{% endcapture
-%}{%      if year != nyear %}
-      <br /><h5>{{ post.date | date: "%Y" }}</h5>{%
-          endif
-%}{%    endunless %}
+      assign p = '9999'
+%}{%  for post in site.categories.topics
+%}{%    assign n = post.date | date: "%Y"
+%}{%    if n != p
+%}{%      assign p = n
+%}
+      <br /><h5>{{ n }}</h5>{%
+        endif %}
       <li style="padding-bottom: 6px;"><code>[{{ post.date | date: "%d %b" }}]</code>&nbsp;
         <a href="{{ post.url }}" style="white-space: nowrap;"><b>{{ post.title }}</b></a>&nbsp;
           {{ post.excerpt | strip_html | truncatewords: 12 }}</li>{%
