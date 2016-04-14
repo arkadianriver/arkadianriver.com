@@ -91,8 +91,8 @@ navlinks: bottom
 works_in_progress: yes
 
 # If you have custom extensions, specifically includes/_my/custom.scss,
-# set this to 'yes'
-custom_extensions: 'no'
+# set this to yes
+custom_extensions: no
 
 # Build settings
 permalink: /:categories/:title.html
