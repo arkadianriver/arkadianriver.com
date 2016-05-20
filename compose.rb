@@ -195,8 +195,12 @@ fname = dstamp + "-" + tslug + '.' + ext
 STDOUT.flush
 
 if (File.exist?("./_drafts/" + fname) or File.exist?("./_posts/" + fname))
-  puts "Sorry you went through all that trouble, but a file with that name exists!"
+  puts <<-eom
+Sorry you went through all that trouble, but the file
+#{fname} already exists.
+  eom
 else
+  unless (Dir.exist?("./_drafts/")) then Dir.mkdir("./_drafts") end
   File.open("./_drafts/" + fname, 'w') do |f|
     f.puts "---"
     f.puts "title: " + title
@@ -214,16 +218,11 @@ else
     f.puts "#date: " + tstamp
     f.puts "#lastupdated: " + tstamp
     f.puts "---"
+    patharg = Gem.win_platform? ? ".\\_drafts\\" + fname : "./_drafts/" + fname
+    puts "File created: " + patharg
+    # open it in an editor if specified
+    if (cfgfile['compose']['editor'])
+      system cfgfile['compose']['editor'] + ' ' + patharg
+    end
   end
-end
-
-patharg = Gem.win_platform? ? ".\\_drafts\\" + fname : "./_drafts/" + fname
-puts "File created: " + patharg
-
-#
-# And, open it in an editor if specified
-#
-
-if (cfgfile['compose']['editor'])
-  system cfgfile['compose']['editor'] + ' ' + patharg
 end
