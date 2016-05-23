@@ -8,11 +8,24 @@ background-image: caustic_light.jpg
 script-includes:
   - /js/jquery.validate.min.js
 script: |
-  $("#sendemail").validate();
+  $("#sendemail").validate({
+    rules: {
+      country: {
+        required: true,
+        equalTo: "#type3"
+      }
+    },
+    messages: {
+      country: "Specify a three-letter lowercase name."
+    }
+  });
 ---
 
 <section>
   <form id="sendemail" method="post" action="{{ site.data.tokens.mailaction }}">
+    <input type="hidden" value="dog" id="type1" />
+    <input type="hidden" value="cow" id="type2" />
+    <input type="hidden" value="cat" id="type3" />
     <div class="row uniform">
       <div class="6u 12u$(xsmall)">
         <input type="text" name="name" id="name" value="" placeholder="Name" />
@@ -25,6 +38,10 @@ script: |
       </div>
       <div class="12u$">
         <textarea required name="textbody" id="textbody" placeholder="Enter your message" rows="6"></textarea>
+      </div>
+      <div class="12u$">
+        <input type="text" name="country" id="country" value=""
+        placeholder="What animal is this emoji? =^.^=" />
       </div>
       <div class="12u$">
         <ul class="actions">
