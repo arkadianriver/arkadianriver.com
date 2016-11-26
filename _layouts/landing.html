@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
   Original Design: Spectral by HTML5 UP
-    html5up.net | @n33co
+    html5up.net
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
   Jekyll build mod
 -->
@@ -74,7 +74,7 @@
               <div class="content">
                 <a href="{{ my_page.url | prepend:site.baseurl }}">
                 <h2>{{ my_page.title }}</h2>
-                <p>{{ my_page.excerpt markdownify | strip_html | strip_newlines | escape_once }}</p>
+                <p>{{ my_page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}</p>
                 </a>
               </div>
             </section>{%
