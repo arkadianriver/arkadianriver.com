@@ -19,12 +19,14 @@ This repo is the same code I use for my site, excluding my posts.
    a. Edit the `_config.yml` file, replacing the values for each key with your info.
 
    b. Add a `_data/tokens.yml` file with your IDs & mail program.
-      See the `_data/tokens-template.ym.` file for example entries.
+      See the `_data/tokens-template.yml.` file for example entries.
 
    c. Add author info for yourself in `_data/authors.yml` as the first
       author entry in the file.
 
-   d. Provide your images and continue tweaking to your heart's desire, or not.
+   d. Provide your own images.
+   
+   e. Continue tweaking to your heart's desire, or not.
 
 0. Create your posts:
 
