@@ -11,34 +11,32 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: arkadianriver
-description: Flowing creativity &#x2192; Cascading bliss
+title: dataishuman
+description: A website on the human side of data
 owner:
-  name: Gary Faircloth # or company name
-  email: gfair@arkadianriver.com
-  url: http://arkadianriver.com
-first_published: 1996 # if migrating another site, the year of your first publish
+  name:  # or company name
+  email:
+  url: https://dataishuman.github.io
+first_published: 2017
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://arkadianriver.com" # the base hostname & protocol for your site
+url: "https://dataishuman.github.io"
 
 # on landing page
 # - set the greeting only if you want to display the first green section
 greeting:
-  title: Welcome!  
-  text: I hope you enjoy my collection
-# - title for your blog's featured posts
-features-title: Featured topics
+  title: What is this
+  text: An attempt to make sense of the complexity of the world, via data
 # - displayed at the bottom
-closing-head: Thanks for visiting
-closing-para: Feel free to get in touch. Cheers!
+closing-head: Contact us?
+closing-para: We always love a good chat, here's how to
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
-  twitter: https://twitter.com/arkadianriver
-  github: https://github.com/arkadianriver
-  linkedin-square: https://linkedin.com/in/garyfaircloth
-  facebook-official: https://facebook.com/gary.faircloth
-  google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
+  twitter: # TODO
+  github: https://github.com/dataishuman
+  linkedin-square: # TODO
+  facebook-official: # TODO
+  google-plus-square: # TODO
   email: /contact/
   #flickr:
   #instagram:
@@ -87,7 +85,7 @@ compose:
 # top, bottom, both, none
 navlinks: bottom
 
-# expecting more works? mark your list as in-progress
+# expecting more pieces? mark your list as in-progress
 works_in_progress: yes
 
 # If you have custom extensions, specifically includes/_my/custom.scss,
