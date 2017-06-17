@@ -5,7 +5,20 @@
 google-analytics: <google-analytics tracking ID>
 
 # Specify your mail form action, whether it be cgiemail, PHP, whatever
-mailaction: <url to your mail sending app>
+mailaction: /mailtome.php
+captchascript: /mailcaptcha.php
+# If you choose to use the mailtome.php script, know that the site needs to
+# support PHP, which github pages does not. You can upload the PHP script
+# elsewhere and put the full URL to the scripts above.
+# If you're using something other than the mailtome.php script, be sure to also
+# edit the /pages/contacts.html file and change/remove the captcha mechanism, too.
+# If using mailtome.php, set these, too:
+fromaddy: <the email address from which you're forwarding the user's form data>
+toaddy: <your email address>
+
+# If you want to use the "Cool tunes" link on the /pages/contact-success.html page
+# set this:
+spotifyurl: <some playlist, doesn't have to be spotify>
 
 # If you've added more vendor contributions that are only applicable to
 # posts on your specific site, you can add to the "credits" list here,
