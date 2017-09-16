@@ -1,9 +1,9 @@
 <?php
 /**
- * written by http://99webtools.com/blog/php-simple-captcha-script/
+ * credit to http://99webtools.com/blog/php-simple-captcha-script/
  */
 session_start();
-$code=rand(1000,9999);
+$code=sprintf('%04d',rand(0,9999));
 $_SESSION["code"]=$code;
 $im = imagecreatetruecolor(50, 24);
 $bg = imagecolorallocate($im, 22, 192, 212); // background color cyan

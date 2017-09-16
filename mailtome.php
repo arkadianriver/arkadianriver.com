@@ -2,7 +2,7 @@
 ---
 <?php
 /**
- * Captcha bit from http://99webtools.com/blog/php-simple-captcha-script/
+ * Captcha credit to http://99webtools.com/blog/php-simple-captcha-script/
  */
 session_start();
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
@@ -31,7 +31,7 @@ EOM;
       header('Location: '. $_POST["failure"]);
     }
   } else {
-    die("Wrong Captcha code entered");
+    die("Wrong Captcha code entered. Use the browser back button and try again.");
   }
 }
 
