@@ -5,13 +5,13 @@ layout: default
     <div class="inner{% if page.options contains 'fullwidth' %} fullwidth{% endif %}">{%
       unless site.navlinks == 'none'
 %}{%    if page.categories contains 'works'
-%}{%      assign idxperma = '/works/'
+%}{%      assign idxperma = '/works/' | prepend: site.baseurl
 %}{%      assign idxtitle = 'Works Index'
 %}{%      assign idxbutton = 'Index'
 %}{%      include fn_groupsort_reverse.html unsorted=site.categories.works groupby='priority' sortby='date'
 %}{%    endif
 %}{%    if page.categories.first == 'topics' and page.categories.last != 'topics'
-%}{%      assign idxperma = page.categories | join: '/' | prepend: '/' | append: '/'
+%}{%      assign idxperma = page.categories | join: '/' | prepend: '/' | prepend: site.baseurl | append: '/'
 %}{%      assign idxtitle = 'Start page'
 %}{%      assign idxbutton = 'Start'
 %}{%      assign sorted_list = site.empty_array
@@ -45,7 +45,7 @@ layout: default
       if sorted_list
 %}{%    if site.navlinks == 'bottom' or site.navlinks == 'both'
 %}{%      unless perma
-%}{%        assign perma = '/topics/'
+%}{%        assign perma = '/topics/' | prepend: site.baseurl
 %}{%      endunless
 %}{%      include fn_sortednav.html posclass='btnbottom'
 %}{%    endif

@@ -5,6 +5,8 @@
 google-analytics: <google-analytics tracking ID>
 
 # Specify your mail form action, whether it be cgiemail, PHP, whatever
+# If you choose to use these provided scripts and you're also using a site
+# baseurl, you need to include the baseurl here, e.g. /blog/mailtome.php
 mailaction: /mailtome.php
 captchascript: /mailcaptcha.php
 # If you choose to use the mailtome.php script, know that the site needs to
