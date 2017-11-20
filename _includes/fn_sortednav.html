@@ -10,7 +10,7 @@
 %}{%      if post.url == page.url
 %}{%        unless forloop.first
 %}{%          assign prevbutton = '&lt; Back'
-%}{%          assign prevurl = prev.url
+%}{%          assign prevurl = prev.url | prepend: site.baseurl
 %}{%          assign prevtitle = prev.title
 %}{%        elsif page.permalink
 %}{%          assign prevbutton = nil
@@ -18,17 +18,17 @@
 %}{%          assign prevtitle = nil
 %}{%        else
 %}{%          assign prevbutton = idxbutton
-%}{%          assign prevurl = idxperma | prepend: baseurl
+%}{%          assign prevurl = idxperma
 %}{%          assign prevtitle = idxtitle
 %}{%        endunless
 %}{%        unless forloop.last
 %}{%          assign next = sorted_list[forloop.index]
 %}{%          assign nextbutton = 'Next &gt;'
-%}{%          assign nexturl = next.url
+%}{%          assign nexturl = next.url | prepend: site.baseurl
 %}{%          assign nexttitle = next.title
 %}{%        else
 %}{%          assign nextbutton = idxbutton
-%}{%          assign nexturl = idxperma | prepend: baseurl
+%}{%          assign nexturl = idxperma
 %}{%          assign nexttitle = idxtitle
 %}{%        endunless
 %}{%      endif
