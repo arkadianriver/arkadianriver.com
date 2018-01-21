@@ -1737,7 +1737,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		position: relative;
 		text-align: center;
 
-		h2 {
+		h1, h2 {
 			@include vendor('transform', 'scale(1)');
 //		@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 			@include vendor('transition', ('transform 0.2s ease', 'opacity 0.2s ease'));
@@ -1857,7 +1857,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	body.is-loading {
 		#banner {
-			h2 {
+			h1, h2 {
 				@include vendor('transform', 'scale(0.95)');
 				opacity: 0;
 
