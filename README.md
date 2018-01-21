@@ -1,13 +1,11 @@
-## arkadianriver.com
+## [Wolford or Gifsack Wedding Site](https://mgifford.github.io/wolford-or-gifsack/)
 
-My personal web site, based off the http://html5up.net/spectral design by
+My wedding web site, based off the http://html5up.net/spectral, initial design by
 [@ajlkn](http://twitter.com/ajlkn).
-The site is made for blog and portfolio content. The blog can contain both
-personal entries and entries by syndicated authors.
+
 The site uses jekyll, a method of creating and maintaining a web site,
 which works by using local templates to generate static files that you upload
 and sync with your remote site.
-This repo is the same code I use for my site, excluding my posts.
 
 ### If you clone or fork this repo to use it:
 
