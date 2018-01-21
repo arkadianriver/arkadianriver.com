@@ -3,7 +3,7 @@ key: 1
 title: Ottawa 2
 permalink: /ottawa2/
 excerpt: Ottawa wedding ceremony
-image: Ottawa.jpg
+image: Ottawa_tall.jpg
 background-image: Ottawa.jpg
 ---
 

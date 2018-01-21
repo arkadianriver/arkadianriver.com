@@ -3,7 +3,7 @@ key: 3
 title: Thailand
 permalink: /thailand/
 excerpt: Thailand Beach "Honeymoon"
-image: Thailand.jpg
+image: Thailand_tall.jpg
 background-image: Thailand.jpg
 ---
 ## Thailand Celebration
