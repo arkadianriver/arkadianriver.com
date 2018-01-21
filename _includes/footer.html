@@ -1,17 +1,10 @@
 <!-- Footer -->
 <footer id="footer">
   <ul class="icons">{%
-  for socloc in site.social %}{%
-    if socloc[1] %}{%
-      if socloc[0] == 'email' %}
-    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope"
-           ><span class="label">E-mail</span></a></li>{%
-      else %}
-    <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
-           ><span class="label">{{ socloc[0] }}</span></a></li>{%
-      endif %}{%
-    endif %}{%
-  endfor %}
+    <li><a target="_blank" href="mailto:mike@openconcept.ca" class="icon square-mike"
+           ><span class="label">E-mail Mike</span></a></li>
+    <li><a target="_blank" href="mailto:dancingrebecca@gmail.com" class="icon square-rebecca"
+           ><span class="label">E-mail Rebecca</span></a></li>
   </ul>
   <ul class="copyright">
     <li>&copy; {%
