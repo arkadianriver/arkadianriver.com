@@ -11,10 +11,10 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: wolford-or-gifsack
-description: Wedding site for Mike & Rebecca 
+title: Mike & Rebecca are Getting Married!
+description: The site for all information related to Mike & Rebecca's 2018 celebrations. 
 owner:
-  name: Mike Gifford # or company name
+  name: Mike Gifford 
   email: mike@openconcept.ca
   url: https://mgifford.github.io/wolford-or-gifsack/
 first_published: 2018 # if migrating another site, the year of your first publish
@@ -34,7 +34,7 @@ closing-para: We need you to RSVP!
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
-  twitter: https://twitter.com/mgifford
+  # twitter: https://twitter.com/mgifford
   # github: https://github.com/mgifford
   # facebook-official: https://facebook.com/gary.faircloth
   email: /contact/
