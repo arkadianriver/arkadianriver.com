@@ -4,6 +4,7 @@ title: Ottawa
 permalink: /ottawa/
 excerpt: Ottawa wedding ceremony
 image: Ottawa_tall.jpg
+image_alt: Rebecca & Mike on the Ottawa River
 background-image: Ottawa2.jpg
 ---
 

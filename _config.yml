@@ -26,10 +26,12 @@ url: "https://mgifford.github.io" # the base hostname & protocol for your site
 greeting:
   title: Welcome!  
   text: We want you to help us celebrate our life together! We will be adding information here to help you join us in either Ottawa, Vancouver or Thailand.
+
 # - title for your blog's featured posts
 features-title: Ottawa
-features2-title: Vancouver
-# features3-title: Thailand
+features-title: Vancouver
+features-title: Thailand
+
 # - displayed at the bottom
 closing-head: We home you can help us celebrate!
 closing-para: We need you to RSVP!
