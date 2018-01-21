@@ -11,68 +11,41 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: arkadianriver
-description: Flowing creativity &#x2192; Cascading bliss
+title: Mike & Rebecca are Getting Married!
+description: The site for all information related to Mike & Rebecca's 2018 celebrations. 
 owner:
-  name: Gary Faircloth # or company name
-  email: gfair@arkadianriver.com
-  url: http://arkadianriver.com
-first_published: 1996 # if migrating another site, the year of your first publish
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://arkadianriver.com" # the base hostname & protocol for your site
+  name: Mike Gifford 
+  email: mike@openconcept.ca
+  url: https://mgifford.github.io/wolford-or-gifsack/
+first_published: 2018 # if migrating another site, the year of your first publish
+baseurl: "/wolford-or-gifsack" # the subpath of your site, e.g. /blog
+url: "https://mgifford.github.io" # the base hostname & protocol for your site
 
 # on landing page
 # - set the greeting only if you want to display the first green section
 greeting:
   title: Welcome!  
-  text: I hope you enjoy my collection
+  text: We want you to help us celebrate our life together! We will be adding information here to help you join us in either Ottawa, Vancouver or Thailand.
+
 # - title for your blog's featured posts
-features-title: Featured topics
+features-title: Ottawa
+features-title: Vancouver
+features-title: Thailand
+
 # - displayed at the bottom
-closing-head: Thanks for visiting
-closing-para: Feel free to get in touch. Cheers!
+closing-head: We home you can help us celebrate!
+closing-para: We need you to RSVP!
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
-  twitter: https://twitter.com/arkadianriver
-  github: https://github.com/arkadianriver
-  linkedin-square: https://linkedin.com/in/garyfaircloth
-  facebook-official: https://facebook.com/gary.faircloth
-  google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
-  email: /contact/
+  # twitter: https://twitter.com/mgifford
+  # github: https://github.com/mgifford
+  # facebook-official: https://facebook.com/gary.faircloth
+  # email: /contact/
+  email-m: mailto:mike@openconcept.ca
+  email-r: mailto:dancingrebecca@gmail.com
   #flickr:
   #instagram:
-  #youtube-square:
-  #spotify:
-  #stack-overflow:
-  #vimeo:
-  #reddit:
-  #stubleupon:
-  #delicious:
-  #pied-piper:
-  #digg:
-  #soundcloud:
-  #deviantart:
-  #angellist:
-  #tumblr-square:
-  #stackexchange:
-  #weibo:
-  #trello:
-  #foursquare:
-  #linux:
-  #bitbucket-square:
-  #vk:
-  #slack:
-  #vine:
-  #weixin:
-  #yelp:
-  #skyatlas:
-  #leanpub:
-  #connectdevelop:
-  #ils:
-  #forumbee:
-  #tripadvisor:
-  #amazon:
 
 # if you use this repo's `ruby compose.rb` script to initiate new posts, put the
 # command to invoke your editor here. (I didn't spend time dealing with spaces
