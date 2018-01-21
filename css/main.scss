@@ -82,8 +82,20 @@ $baseurl: '{{ site.baseurl }}/images';
 		text-decoration: none;
 
 		&:hover {
-			border-bottom-color: transparent;
+			border-bottom-color: red;
 		}
+		&:focus {
+			border-bottom-color: green;
+		}
+	}
+
+	a h2:hover {
+	  text-decoration: underline;
+	  border-bottom-color: green;
+	}
+	a h2:focus {
+	  text-decoration: underline;
+	  border-bottom-color: red;
 	}
 
 	strong, b {
@@ -1580,7 +1592,16 @@ $baseurl: '{{ site.baseurl }}/images';
 					@include breakpoint(small) {
 						line-height: 3em;
 					}
+
+							
+					
 				}
+				> a:hover {
+                  background: red;
+                }
+				> a:focus {
+                  background: green;
+                }
 			}
 		}
 
@@ -1710,6 +1731,12 @@ $baseurl: '{{ site.baseurl }}/images';
 					&:first-child {
 						margin-left: 0;
 					}
+					> a:hover {
+                      background: red;
+                    }
+				    > a:focus {
+                      background: green;
+                    }
 				}
 			}
 		}
@@ -2212,6 +2239,12 @@ $baseurl: '{{ site.baseurl }}/images';
   		> a {
   			text-decoration: none;
   		}
+		> a:hover {
+          background: red;
+                }
+		> a:focus {
+          background: green;
+        }
   	}
   	.btitle {
   		font-family: _font(prose-family);
