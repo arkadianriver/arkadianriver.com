@@ -45,11 +45,5 @@ background-image: Ottawa.jpg
 
 #### Things to do in O-Town
 
-## Vancouver
 
-### Location - West Vancouver
-
-### Schedule
-
-## Thailand
 
