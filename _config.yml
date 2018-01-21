@@ -25,11 +25,13 @@ url: "https://mgifford.github.io" # the base hostname & protocol for your site
 # - set the greeting only if you want to display the first green section
 greeting:
   title: Welcome!  
-  text: We want you to help us celebrate our life together!
+  text: We want you to help us celebrate our life together! We will be adding information here to help you join us in either Ottawa, Vancouver or Thailand.
 # - title for your blog's featured posts
 features-title: Ottawa
+features-title: Vancouver
+features-title: Thailand
 # - displayed at the bottom
-closing-head: Thanks for visiting
+closing-head: We home you can help us celebrate!
 closing-para: We need you to RSVP!
 
 # on all pages (and the first three you list display with greeting, if included)
@@ -37,7 +39,9 @@ social:
   # twitter: https://twitter.com/mgifford
   # github: https://github.com/mgifford
   # facebook-official: https://facebook.com/gary.faircloth
-  email: /contact/
+  # email: /contact/
+  email: mike@openconcept.ca
+  email: dancingrebecca@gmail.com
   #flickr:
   #instagram:
 
