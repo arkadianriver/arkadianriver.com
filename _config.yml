@@ -28,8 +28,8 @@ greeting:
   text: We want you to help us celebrate our life together! We will be adding information here to help you join us in either Ottawa, Vancouver or Thailand.
 # - title for your blog's featured posts
 features-title: Ottawa
-features-title: Vancouver
-features-title: Thailand
+features2-title: Vancouver
+# features3-title: Thailand
 # - displayed at the bottom
 closing-head: We home you can help us celebrate!
 closing-para: We need you to RSVP!
@@ -41,7 +41,7 @@ social:
   # facebook-official: https://facebook.com/gary.faircloth
   # email: /contact/
   email: mike@openconcept.ca
-  email: dancingrebecca@gmail.com
+  email2: dancingrebecca@gmail.com
   #flickr:
   #instagram:
 

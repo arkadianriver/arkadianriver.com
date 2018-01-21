@@ -1,7 +1,7 @@
 ---
 key: 1
-title: Ottawa 2
-permalink: /ottawa2/
+title: Ottawa
+permalink: /ottawa/
 excerpt: Ottawa wedding ceremony
 image: Ottawa_tall.jpg
 background-image: Ottawa.jpg
