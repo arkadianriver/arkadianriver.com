@@ -4,7 +4,7 @@ title: Thailand
 permalink: /thailand/
 excerpt: Thailand Beach "Honeymoon"
 image: Thailand_tall.jpg
-background-image: Thailand.jpg
+background-image: Thailand2.jpg
 ---
 ## Thailand Celebration
 

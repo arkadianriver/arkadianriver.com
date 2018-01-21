@@ -4,7 +4,7 @@ title: Ottawa
 permalink: /ottawa/
 excerpt: Ottawa wedding ceremony
 image: Ottawa_tall.jpg
-background-image: Ottawa.jpg
+background-image: Ottawa2.jpg
 ---
 
 # The Wedding Site for Rebecca &amp; Mike's Celebration!
