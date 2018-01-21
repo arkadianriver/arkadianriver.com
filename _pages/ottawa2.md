@@ -1,3 +1,12 @@
+---
+key: 1
+title: Ottawa 2
+permalink: /ottawa2/
+excerpt: Ottawa wedding ceremony
+image: Ottawa.jpg
+background-image: Ottawa.jpg
+---
+
 # The Wedding Site for Rebecca &amp; Mike's Celebration!
 
 ## Ottawa
