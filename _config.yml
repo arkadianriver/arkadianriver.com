@@ -20,6 +20,7 @@ owner:
 first_published: 1996 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site
+lang: en-us
 
 # on landing page
 # - set the greeting only if you want to display the first green section
