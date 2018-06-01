@@ -7,7 +7,7 @@
         <a href="#menu" class="menuToggle"><span>Menu</span></a>
         <div id="menu">
           <ul>
-            <li><a href="{{ "/index.html" | prepend: site.baseurl }}">Home</a></li>{%
+            <li><a href="{{ "/index.html#greeting" | prepend: site.baseurl }}">Home</a></li>{%
             assign sorted_pages = site.pages | sort: 'key','last' %}{%
             for my_page in sorted_pages %}{%
               if my_page.title %}{%

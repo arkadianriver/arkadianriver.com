@@ -340,6 +340,10 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
+	#greeting header.major {
+		padding-top: 20px;
+	}
+
 	header {
 		p {
 			color: _palette(fg-light);
@@ -1424,6 +1428,9 @@ $baseurl: '{{ site.baseurl }}/images';
 				&:before {
 				  content: " ";
 				}
+			}
+			&:last-child {
+				font-weight: bold;
 			}
 			@include breakpoint(dinky) {
 				border: 0;

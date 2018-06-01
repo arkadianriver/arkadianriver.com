@@ -73,8 +73,10 @@
               </div>
               <div class="content">
                 <a href="{{ my_page.url | prepend:site.baseurl }}">
+                <div style="height:100%;width:100%;">
                 <h2>{{ my_page.title }}</h2>
                 <p>{{ my_page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}</p>
+                </div>
                 </a>
               </div>
             </section>{%
