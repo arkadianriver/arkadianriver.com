@@ -1,3 +1,5 @@
+---
+---
 User-agent: *
 Disallow:
-Sitemap: http://www.arkadianriver.com/sitemap.xml
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

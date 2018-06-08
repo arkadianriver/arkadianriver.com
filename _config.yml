@@ -15,12 +15,14 @@ title: arkadianriver
 description: Flowing creativity &#x2192; Cascading bliss
 owner:
   name: Gary Faircloth # or company name
-  email: gfair@arkadianriver.com
   url: http://arkadianriver.com
 first_published: 1996 # if migrating another site, the year of your first publish
-baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://arkadianriver.com" # the base hostname & protocol for your site
-lang: en-us
+baseurl: "" # the subpath of your site, e.g. /blog
+            # Note you'll have to move your robots.txt to the root if you want it used.
+            # And list multiple sitemaps if there are other subdirectories you want indexed
+            # besides this blog.
+lang: en-us # used in HTML lang attributes
 
 # on landing page
 # - set the greeting only if you want to display the first green section
