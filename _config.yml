@@ -11,13 +11,14 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: arkadianriver
-description: Flowing creativity &#x2192; Cascading bliss
+title: _site name_
+description: _description_
 owner:
-  name: Gary Faircloth # or company name
-  url: http://arkadianriver.com
-first_published: 1996 # if migrating another site, the year of your first publish
-url: "http://arkadianriver.com" # the base hostname & protocol for your site
+  name: _your name_ # or company name
+  url: "http://example.com" # your URL
+first_published: 2010 # if migrating another site, the year of your first publish
+                      # Must be a 4-digit integer year (math is used on it)
+url: "http://example.com" # the base hostname & protocol for this site
 baseurl: "" # the subpath of your site, e.g. /blog
             # Note you'll have to move your robots.txt to the root if you want it used.
             # And list multiple sitemaps if there are other subdirectories you want indexed
@@ -27,22 +28,20 @@ lang: en-us # used in HTML lang attributes
 # on landing page
 # - set the greeting only if you want to display the first green section
 greeting:
-  title: Welcome!  
-  text: I hope you enjoy my collection
-# - title for your blog's featured posts
-features-title: Featured topics
+  title: _Your greeting_  
+  text: _Your detailed greeting text_
 # - displayed at the bottom
-closing-head: Thanks for visiting
-closing-para: Feel free to get in touch. Cheers!
+closing-head: _Your closing_
+closing-para: _Your detailed closing_
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
-  twitter: https://twitter.com/arkadianriver
-  github: https://github.com/arkadianriver
-  linkedin-square: https://linkedin.com/in/garyfaircloth
-  facebook-official: https://facebook.com/gary.faircloth
-  google-plus-square: https://plus.google.com/u/0/+GaryFaircloth
-  email: /contact/
+  twitter: https://twitter.com/_username_
+  github: https://github.com/_username_
+  linkedin-square: https://linkedin.com/in/_username_
+  facebook-official: https://facebook.com/_username_
+  google-plus-square: https://plus.google.com/u/0/+_username_
+  email: /contact/ # you can configure and use this contact page or use your email addy
   #flickr:
   #instagram:
   #youtube-square:
@@ -76,6 +75,9 @@ social:
   #forumbee:
   #tripadvisor:
   #amazon:
+
+# - title for your blog's featured posts
+features-title: Featured topics
 
 # if you use this repo's `ruby compose.rb` script to initiate new posts, put the
 # command to invoke your editor here. (I didn't spend time dealing with spaces

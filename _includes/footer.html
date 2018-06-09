@@ -20,18 +20,13 @@
     <li>&copy; {%
     assign thisyear = site.time | date: "%Y" %}{%
     if site.first_published %}{%
-      capture diff %}
-        {{ site.first_published | minus:thisyear }}{%
+      capture diff %}{{ site.first_published | minus:thisyear }}{%
       endcapture %}{%
-      if diff contains '-' %}{{
-        site.first_published }},{%
+      if diff contains '-' %}{{ site.first_published }}, {%
       endif %}{%
-    endif %}
-    {{ thisyear }}{%
-    if site.owner.name %}
-      {{ site.owner.name }}{%
-    else %}
-      {{ site.title }}{%
+    endif %}{{ thisyear }} {%
+    if site.owner.name %}{{ site.owner.name }}{%
+    else %}{{ site.title }}{%
     endif %}</li>
     <li><a href="{{ '/credits/' | prepend: site.baseurl }}">Credits</a></li>
   </ul>
