@@ -20,6 +20,19 @@ if (File.exist?(authfile))
   author = YAML.load_file(authfile).keys[0]
 end
 
+# for getting user input to each question
+def getinput(question, default = '')
+  askuser = question + " ('q' to quit)"
+  askuser << (!default.empty? ? " [#{default}]: " : ": ")
+  puts askuser
+  myui = gets.chomp
+  if myui.casecmp('q').zero? then
+    puts "Okay, g'bye!"
+    exit
+  end
+  return myui
+end
+
 # for print stmt buffers
 STDOUT.sync = true
 
@@ -38,11 +51,9 @@ This site has two types of posts:
 - Works: portfolio entries
 
 eoh
-print "Is this a (t)opic or (w)ork? [t]: "
 type = ''
 while true
-  type = gets
-  type.strip!
+  type = getinput("Is this a (t)opic or (w)ork?", "t")
   unless (type == '' or /^[tw]$/.match(type)) then redo end
   if type=='' then type = 't' end
   break
@@ -59,9 +70,7 @@ want it to have a priority under 0.5. What priority should it have?
   eoh
   priority = ''
   while true
-    print "(0 - 1.0) [0.7]: "
-    priority = gets
-    priority.strip!
+    priority = getinput("(0 - 1.0)", "0.7")
     unless (priority == '' or (priority.to_f >= 0.0 and priority.to_f <= 1.0)) then redo end
     if priority == '' then priority = '0.7' end
     break
@@ -75,9 +84,7 @@ priority in the site map. Is this a featured post?
   eoh
   featured = ''
   while true
-    print "(y or [n]): "
-    featured = gets
-    featured.strip!
+    featured = getinput("y or [n]")
     unless (featured == '' or /^[yn]$/.match(featured)) then redo end
     if (featured=='' or featured=='n') then featured = nil end
     break
@@ -92,9 +99,7 @@ and space characters only. Tip: I title my first topic in the sub-category
 with the same name as the sub-category so that the breadcrumb looks nice.
 
   eoh
-  print "So, is this part of a sub-category grouping? (y or [n]): "
-  isgroup = gets
-  isgroup.strip!
+  isgroup = getinput("So, is this part of a sub-category grouping? (y or [n])")
   if isgroup == 'y'
     trapped = true
     subcat = ''
@@ -116,9 +121,7 @@ with the same name as the sub-category so that the breadcrumb looks nice.
     categories << subcat
     isfirst = ''
     while true
-      print "\nIs this your first topic in the sub-category? (y or [n]): "
-      isfirst = gets
-      isfirst.strip!
+      isfirst = getinput("\nIs this your first topic in the sub-category? (y or [n])")
       unless (isfirst == '' or /^[yn]$/.match(isfirst)) then redo end
       if isfirst == 'y'
         perma = '/' + categories.join('/') + '/'
@@ -129,21 +132,15 @@ with the same name as the sub-category so that the breadcrumb looks nice.
 end
 
 while true
-  print "\nPost title: "
-  title = gets
-  title.strip!
+  title = getinput("\nPost title")
   break unless title == ''
   puts "Well you gotta call it something."
 end
 
-print "\nPost excerpt: "
-excerpt = gets
-excerpt.strip!
+excerpt = getinput("\nPost excerpt")
 
 if type == 't'
-  print "\nPost author [" + author + "]: "
-  theauth = gets
-  theauth.strip!
+  theauth = getinput("\nPost author", author)
   if theauth == '' then theauth = author end
 end
 
@@ -154,9 +151,8 @@ and type the name here. If it's in another folder, prefix the image with
 '/' and the folder name, such as /unique/images/mine.jpg. For no image,
 just hit Enter.
 eoc
-print "background-image: "
-back = gets
-back = back.strip! == '' ? nil : back
+back = getinput("background-image")
+back = back == '' ? nil : back
 
 puts <<-eoc
 
