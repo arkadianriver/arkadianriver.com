@@ -176,9 +176,8 @@ tslug = title.dup
 end
 tslug.downcase!
 
-t = Time.new
-tstamp = t.strftime("%Y-%m-%d %H:%M:%S")
-dstamp = t.strftime("%Y-%m-%d")
+tstamp = Time.now.to_s
+dstamp = tstamp.split.first
 
 ext = cfgfile['compose']['extension'] ? cfgfile['compose']['extension'] : 'md'
 
@@ -210,9 +209,9 @@ else
       f.puts "  - " + cat
     end
     if (back) then f.puts "background-image: " + back end
-    f.puts "#date/lastupdated are optional"
+    f.puts "#date/lastmod are optional"
     f.puts "#date: " + tstamp
-    f.puts "#lastupdated: " + tstamp
+    f.puts "#lastmod: " + tstamp
     f.puts "---"
     patharg = Gem.win_platform? ? ".\\_drafts\\" + fname : "./_drafts/" + fname
     puts "File created: " + patharg

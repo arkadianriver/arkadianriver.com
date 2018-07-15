@@ -17,7 +17,7 @@ sitemap:
     <url>
       <loc>{{ site.url }}{{ post.url }}</loc>{%
         if post.lastmod %}
-        <lastmod>{{ post.lastmod | date: "%Y-%m-%d" }}</lastmod>{%
+        <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>{%
         elsif post.date %}
         <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>{%
         else %}
