@@ -8,7 +8,7 @@
 # and all by hand, like jekyll-compose, but specific to this repo.
 #
 
-Gem.win_platform? ? (system "cls") : (system "clear")
+system Gem.win_platform? ? "cls" : "clear"
 
 # for getting the name of your editor and extension
 require 'yaml'
