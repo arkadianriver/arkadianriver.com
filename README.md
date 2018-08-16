@@ -46,3 +46,11 @@ This repo is the same code I use for my site, excluding my posts.
    `site preview` runs `jekyll serve` in production mode.  
    `site prod` simply builds with `jekyll build` in production mode (no serve).  
    `site publish` uses WinSCP's `synchronize` feature to mirror to a remote site.
+
+### other options
+
+0. Embedding youtube videos (source)[https://adam.garrett-harris.com/how-to-easily-embed-youtube-videos-in-jekyll-sites-without-a-plugin/]:
+
+   a. Create a file e.g. youtubePlayer.html in the folder _includes
+   b. Place this code inside: <iframe width="777" height="437" src="https://www.youtube.com/embed/{{ include.id }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   c. In you post include this code to embed the video {% include youtubePlayer.html id="aaBBCC11DD" %} where aaBBCC11DD is a video id belonging to the video
