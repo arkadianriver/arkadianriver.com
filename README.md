@@ -1,6 +1,6 @@
 # arkadianriver.com
 
-My personal web site, based off the http://html5up.net/spectral design by
+My personal web site, using the design of http://html5up.net/spectral by
 [@ajlkn](http://twitter.com/ajlkn).
 
 I made this Jekyll theme for blog and portfolio content. The blog can contain both
