@@ -5,10 +5,10 @@ My personal web site, using the design of http://html5up.net/spectral by
 
 I made this Jekyll theme for blog and portfolio content. The blog can contain both
 personal entries and entries by syndicated authors.
-[Jekyll](https://jekyllrb.com) is a static-site-generator, which
-works by using local templates to generate all the content in static
-HTML files that you publish (as opposed to something like WordPress, which
-pulls from a database).
+[Jekyll](https://jekyllrb.com) is a static site generator, which
+uses templates to generate all the publishable content as static
+HTML files (as opposed to something like WordPress, which has files that pull
+data from a database at runtime).
 This repo is the exact same code I use for my site (excluding my posts and
 some data files created from templates where noted).
 
@@ -23,49 +23,68 @@ regardless of where you choose to publish.
 With it downloaded and with Ruby, RubyGems, and Jekyll 3.1.2 or higher installed, you can use the post-creation script,
 preview how your site looks and functions, and properly view the theme's User Guide.
 
-1. Tweak the site to make it your own. Jekyll uses [YAML files](http://www.yaml.org/start.html)
-   for its site variables:
+1. Personalize the information in the [YAML files](http://www.yaml.org/start.html).
 
-   1. Edit the `_config.yml` file, replacing the values for each key with your info.
+   File | Action
+   -----|-------
+   **`_config.yml`** | Replace the values for each key with your info.
+   **`_data/tokens.yml`** | Create this file, using `_data/tokens-template.yml` as an example.
+   **`_data/authors.yml`** | Add author info for yourself as the first entry in the file.
 
-   1. Add a `_data/tokens.yml` file with your IDs & mail program.
-      See the `_data/tokens-template.yml.` file for example entries.
+1. Personalize the images with your own.
 
-   1. Add author info for yourself in `_data/authors.yml` as the first
-      author entry in the file.
+   Image | Description
+   ------|------------
+   **`banner.jpg`** | The main large image on the front page.
+   **`pic01.jpg`** | The topics image.
+   **`pic02.jpg`** | The works image.
 
-   1. Provide your own images.
+1. From the repo's root directory, start Jekyll to preview as you write.
    
-   1. Continue tweaking to your heart's desire, or not.
-
-1. Create your posts:
-
-   1. Get Jekyll started to preview as you write:
-   
-      1. In the repo's root directory, run `site dev` if you're on Windows (or `jekyll serve --future --drafts`).
+   ```
+   bundle exec jekyll serve --future --drafts
+   ```
       
-      1. Open a browser to http://localhost:4000 (or the URL that jekyll indicates to open).
+1. Open a browser to http://localhost:4000 (or the port number that jekyll indicates to open).
 
-   1. Use the posts in the 31st century as guides for yours: http://localhost:4000/topics/user-guide/
-      (They're built by jekyll only when the `--future` option is used.)
 
-   1. You can run `ruby compose.rb` to create new draft posts.
+1. Compose your first post!
+
+   ```
+   ruby compose.rb
+   ```
+
+   The User Guide describes some features that might be useful: http://localhost:4000/topics/user-guide/
 
 1. Test and publish your site:
 
    If you're building your site on Windows (like me) and you use WinSCP to sync with your
    remote site, you can use the `site.bat` file. Set up a `_site.env` file
    as described in the comments of `site.bat`.
+
    CAREFUL with that `synchronize -delete` flag and be _sure_ you've listed your site excludes correctly.
 
-   `site dev` runs `jekyll serve --future --drafts` in development mode.  
-   `site devnof` runs `jekyll serve --drafts` in development mode.  
-   `site preview` runs `jekyll serve` in production mode.  
-   `site prod` simply builds with `jekyll build` in production mode (no serve).  
-   `site publish` uses WinSCP's `synchronize` feature to mirror to a remote site.
+   ```bash
+   site {dev|devnof|preview|prod|publish}
 
-## theme note
+     dev     Runs Jekyll in development watch mode:
+               jekyll serve --future --drafts
+
+     devnof  Runs Jekyll in development watch mode without future posts:
+               jekyll serve --drafts
+
+     preview Runs Jekyll in production watch mode:
+               jekyll serve
+
+     prod    Builds production content without watch mode:
+               jekyll build
+
+     publish Uses WinSCP's synchronize feature to mirror to a remote site.
+   ```
+
+## Theme note
 This is a theme in the old sense of the word. This is not a newer _gem-based_ theme (yet).
 
 ## License
 MIT
+
