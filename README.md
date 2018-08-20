@@ -35,9 +35,9 @@ preview how your site looks and functions, and properly view the theme's User Gu
 
    Image | Description
    ------|------------
-   **`banner.jpg`** | The main large image on the front page.
-   **`pic01.jpg`** | The topics image.
-   **`pic02.jpg`** | The works image.
+   **`banner.jpg`** | The main large image on the front page
+   **`pic01.jpg`** | The topics image
+   **`pic02.jpg`** | The works image
 
 1. From the repo's root directory, start Jekyll to preview as you write.
    
@@ -58,11 +58,12 @@ preview how your site looks and functions, and properly view the theme's User Gu
 
 1. Test and publish your site:
 
-   If you're building your site on Windows (like me) and you use WinSCP to sync with your
-   remote site, you can use the `site.bat` file. Set up a `_site.env` file
-   as described in the comments of `site.bat`.
-
-   CAREFUL with that `synchronize -delete` flag and be _sure_ you've listed your site excludes correctly.
+   If you're building your site on Windows (like me) you can use the `site.bat` file.
+   
+   And, if you use WinSCP to sync with your remote site, you can use the _publish_ option.
+   To publish with WinSCP, set up a `_site.env` file as described in the comments of `site.bat`,
+   being _particularly careful_ to list your site remote path and excludes correctly because the
+   script uses the `syncronize -delete` option to mirror the entire remote folder to the local one.
 
    ```bash
    site {dev|devnof|preview|prod|publish}
