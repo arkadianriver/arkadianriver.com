@@ -1,10 +1,10 @@
 # arkadianriver.com
 
-My personal web site, using the design of http://html5up.net/spectral by
-[@ajlkn](http://twitter.com/ajlkn).
+My personal web site, using the awesome design of http://html5up.net/spectral by
+the talented [@ajlkn](http://twitter.com/ajlkn).
 
-I made this Jekyll theme for blog and portfolio content. The blog can contain both
-personal entries and entries by syndicated authors.
+I morphed that design into this Jekyll theme for blog and portfolio entries.
+The blog can contain both personal entries and entries by syndicated authors.
 [Jekyll](https://jekyllrb.com) is a static site generator, which
 uses templates to generate all the publishable content as static
 HTML files (as opposed to something like WordPress, which has files that pull
