@@ -15,11 +15,11 @@ title: _site name_
 description: _description_
 owner:
   name: _your name_ # or company name
-  url: "http://example.com" # your URL
+  url: "https://example.com" # your URL
 first_published: 2010 # if migrating another site, the year of your first publish
                       # Must be a 4-digit integer year (math is used on it)
-url: "http://example.com" # the base hostname & protocol for this site
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://arkadianriver.github.io" # the base hostname & protocol for this site
+baseurl: "/arkadianriver.com" # the subpath of your site, e.g. /blog
             # Note you'll have to move your robots.txt to the root if you want it used.
             # And list multiple sitemaps if there are other subdirectories you want indexed
             # besides this blog.
