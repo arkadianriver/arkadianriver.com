@@ -1,0 +1,21 @@
+{%   case include.type
+%}{% when 'tip'
+%}{%   assign istyle = 'lightbulb-o'
+%}{% when 'warning'
+%}{%   assign istyle = 'warning'
+%}{% when 'important'
+%}{%   assign istyle = 'exclamation'
+%}{% when 'did-you-know'
+%}{%   assign istyle = 'question'
+%}{% when 'faq'
+%}{%   assign istyle = 'comments'
+%}{% when 'note'
+%}{%   assign istyle = 'info'
+%}{% else
+%}{%   assign istyle = 'info'
+%}{% endcase
+%}<table class="alt" style="width:95%;margin-left:0.5em;">
+<tr><td><span class="image note"><span class="icon fa-{{istyle}} styleN"></span></span>
+{{ include.text }}
+</td>
+</tr></table>

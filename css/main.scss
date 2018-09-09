@@ -633,6 +633,11 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.style3 {
 			color: _palette(accent4, bg);
 		}
+
+		&.styleN {
+			color: _palette(accent1, bg);
+			font-size: _font(hdr-size-xxlarge);
+		}
 	}
 
 /* Image */
@@ -660,8 +665,15 @@ $baseurl: '{{ site.baseurl }}/images';
 			top: 0.25em;
 		}
 
+		&.note {
+			float: left;
+			margin: 0 1em 0 0;
+			top: 0.25em;
+		}
+
 		&.left,
-		&.right {
+		&.right,
+		&.note {
 			max-width: 40%;
 
 			img {
@@ -1448,12 +1460,13 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
-	.wrapper.minihead {
-		@include padding(1em, 0);
-	}
 
 	.wrapper {
 		@include padding(3em, 0); //6
+
+		.minihead {
+			@include padding(1em, 0);
+		}
 
 		> .inner {
 			width: 60em;
