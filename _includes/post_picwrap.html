@@ -1,0 +1,11 @@
+<span class="image {%
+if include.pos %}{{ include.pos }}{%
+else %}left{%
+endif %}"><img {%
+if include.max %}style="max-width:{{include.max}}px" {%
+endif %}src="{%
+if include.src %}{{ include.src | prepend: site.baseurl }}{%
+else %}{{ '/images/pic04.jpg' | prepend: site.baseurl }}{%
+endif %}" alt="{%
+if include.alt %}{{ include.alt }}{%
+endif %}" /></span>

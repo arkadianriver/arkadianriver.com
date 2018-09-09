@@ -95,6 +95,10 @@ navlinks: bottom
 # expecting more works? mark your list as in-progress
 works_in_progress: yes
 
+# Github pages posts future posts by default.
+# You'll want to move the user guide posts to _drafts if you set this to true.
+future: false
+
 # If you have custom extensions, specifically includes/_my/custom.scss,
 # set this to yes
 custom_extensions: no
