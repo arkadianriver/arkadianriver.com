@@ -6,72 +6,84 @@ excerpt: People to thank
 background-image: caustic_light.jpg
 ---
 <style>
-.imgref {
-  position: relative;
-  float: left;
-  vertical-align: top;
-  width: 120px;
-  margin: 0 12px 12px 0;
-}
-.credlist {
-  list-style-type: none;
-}
-.credlist li {
-  clear: both;
+article .inner .creds td,
+article .inner .pcreds {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 10pt;
+  font-weight: 400;
+  line-height: 1.4em;
+  padding: 0.3em 0.3em;
 }
 </style>
-<dl>
-<dt>Design and framework</dt>
-<dd>
-<ul class="credlist">
-<li><i>Design and overall theme:</i> <a target="_blank" href="http://html5up.net/spectral">@ajlkn</a>,
-Creative Commons license</li>
-<li><i>Design mods for a jekyll blog:</i> <a target="_blank"
-href="http://github.com/arkadianriver/arkadianriver.com">arkadianriver</a>, MIT license</li>
-<li><i>Icons:</i> <a target="_blank" href="https://fortawesome.github.io/Font-Awesome/">Dave Gandy</a>,
-MIT license</li>
-<li><i>Syntax-highlighting theme:</i> <a target="_blank" href="http://pygments.org/">Pygments.org</a>,
-MIT license</li>
-<li><i>Lora font:</i> <a target="_blank"
-href="http://www.cyreal.org">Cyreal</a>, SIL Open Font License, 1.1</li>
-<li><i>Open Sans font:</i> <a target="_blank"
-href="https://www.google.com/fonts/attribution">Google</a>, Apache License, 2.0</li>
-<li><i>Build framework:</i> <a target="_blank" href="https://jekyllrb.com/">Jekyll</a>,
-MIT license</li>
-<li><i>jQuery validation:</i> <a target="_blank"
-href="http://jqueryvalidation.org/">Jörn Zaefferer</a>, MIT license</li>
-<li><i>jQuery:</i> <a target="_blank"
-href="https://jquery.com/">jQuery Foundation</a>, MIT license</li>
-{{ site.data.tokens.extra-credit }}
-</ul>
-</dd>
-<dt>Inspiration</dt>
-<dd>
-<ul class="credlist">
-<li>
-<a target="_blank" href="https://github.com/mmistakes">Michael Rose</a>,
-<a target="_blank" href="https://github.com/oller">David Ollerhead</a>,
-<a target="_blank" href="https://twitter.com/vladdsm">Vladimir Zhbanko</a>,
-<a target="_blank" href="https://twitter.com/agarrharr">Adam Garrett-Harris</a>
-</li>
-</ul>
-</dd>
-<dt>Images</dt>
-<dd>
-<ul class="credlist">
-<li><img class="imgref" src="{{ '/images/banner.jpg' | prepend: site.baseurl }}" />
-<a target="_blank" href="https://www.flickr.com/photos/72906133@N00/4011647045/">Konstaninos Dafallas</a>, Creative Commons license</li>
-<li><img class="imgref" src="{{ '/images/caustic_light.jpg' | prepend: site.baseurl }}" />
-<a target="_blank" href="https://www.flickr.com/photos/fdecomite/1907376527/">fdecomite</a>, Creative Commons license</li>
-<li><img class="imgref" src="{{ '/images/flickr-froderik.jpg' | prepend: site.baseurl }}" />
-<a target="_blank" href="https://www.flickr.com/photos/froderik/9355090806/">froderik</a>, Creative Commons license</li>
-<li><img class="imgref" src="{{ '/images/pic01.jpg' | prepend: site.baseurl }}" />
-public domain</li>
-<li><img class="imgref" src="{{ '/images/pic02.jpg' | prepend: site.baseurl }}" />
-public domain</li>
-<li><img class="imgref" src="{{ '/images/sunshine.jpg' | prepend: site.baseurl }}" />
-public domain</li>
-{{ site.data.tokens.image-credit }}
-</dd>
-</dl>
-<p>&nbsp;</p>
+
+<h4>Design and framework</h4>
+<table class="creds">
+  {% for c in site.data.credits.creds
+%}<tr>
+  <td>{{ c.for }}</td>{%
+       if c.url %}
+  <td><a target="_blank" href="{{ c.url }}">{{ c.by }}</a></td>{%
+       else %}
+  <td>{{ c.by }}</td>{%
+       endif %}
+  <td>{% if c.lic %}{{ site.data.credits.licenses[c.lic].name }}{% else %}public domain{% endif %}</td>
+</tr>{%
+     endfor %}
+  {% for ec in site.data.tokens.extra-credit
+%}<tr row="extra">
+  <td>{{ ec.for }}</td>{%
+       if ec.url %}
+  <td><a target="_blank" href="{{ ec.url }}">{{ ec.by }}</a></td>{%
+       else %}
+  <td>{{ ec.by }}</td>{%
+       endif %}
+  <td>{% if ec.lic %}{{ site.data.credits.licenses[ec.lic].name }}{% else %}public domain{% endif %}</td>
+</tr>{%
+     endfor %}
+</table>
+
+<h4>Inspiration</h4>
+<table class="creds"><tr><td>
+{% for i in site.data.credits.inspiration
+%}  <a target="_blank" href="{{ i.url }}">{{ i.name }}</a>{% unless forloop.last == true %},{% endunless %}{%
+   endfor %}{%
+   for ei in site.data.tokens.extra-inspiration
+%},
+<a target="_blank" href="{{ ei.url }}">{{ ei.name }}</a>{%
+   endfor %}
+</td></tr></table>
+
+<h4>Images</h4>
+<div class="box alt"><div class="row uniform 50%">
+{% for img in site.data.credits.image-credit
+%}<div class="4u">
+  {% if img.url %}<a style="border:none !important;" href="{{ img.url }}" target="_blank"
+     title="{% if img.by %}{{ img.by }}, {% endif %}{%
+               if img.lic %}{{ site.data.credits.licenses[img.lic].name }}{%
+               else %}public domain{%
+               endif %}">{%
+     endif %}<img style="width:100%"
+     src="{{ img.src | prepend: site.baseurl }}"
+     alt="the image being credited" />{% if img.url %}</a>{% endif %}
+</div>{%
+   endfor %}{%
+   for eimg in site.data.tokens.extra-image-credit
+%}<div class="4u">
+  {% if eimg.url %}<a style="border:none !important;" href="{{ eimg.url }}" target="_blank"
+     title="{% if eimg.by %}{{ eimg.by }}, {% endif %}{%
+               if eimg.lic %}{{ site.data.credits.licenses[eimg.lic].name }}{%
+               elsif eimg.license %}{{ eimg.license }}{%
+               else %}public domain{%
+               endif %}">{%
+     endif %}<img style="width:100%"
+     src="{{ eimg.src | prepend: site.baseurl }}"
+     alt="the image being credited" />{% if eimg.url %}</a>{% endif %}
+</div>{%
+   endfor %}
+</div></div>
+<p class="pcreds">{%
+if site.data.tokens.other-image-credit %}
+{{ site.data.tokens.other-image-credit}}{%
+else %}{{ site.data.credits.other-image-credit}}{%
+endif %}</p>
+

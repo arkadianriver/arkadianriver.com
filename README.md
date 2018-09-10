@@ -33,7 +33,8 @@ preview how your site looks and functions, and properly view the theme's User Gu
    **`_data/tokens.yml`** | Create this file, using `_data/tokens-template.yml` as an example.
    **`_data/authors.yml`** | Add author info for yourself as the first entry in the file.
 
-1. Personalize the images with your own.
+1. Personalize the images with your own, and change the attribution for your new banner
+   at the bottom of `_data/credits.yml`.
 
    Image | Description
    ------|------------

@@ -25,14 +25,25 @@ spotifyurl: <some playlist, doesn't have to be spotify>
 # If you've added more vendor contributions that are only applicable to
 # posts on your specific site, you can add to the "credits" list here,
 # so that they won't be propagated to other forks and clones
-extra-credit: |
-  <li><i>Excellent contribution:</i> <a target="_blank"
-  href="http://contributor.url">Generous Contributor</a>,
-  with very generous open license</li>
-image-credit: |
-  <li><img class="imgref" src="/path/to/images/nicepic.png" />
-  <a target="_blank" href="http://artistsite.com">Artist</a>,
-  generous open creative license</li>  
+extra-credit:
+  - for : Excellent contribution
+    by  : Generous Contributor
+    url : http://contributor.url
+    lic : license-code # see credits.yml, if public domain, remove the lic entry
+extra-inspiration:
+  - name : The "Idea" Person
+    url  : http://give-em-a-shout-out.com
+extra-image-credit:
+  - src : /path/to/images/nicepic.png
+    by  : Artist
+    url : http://artistsite.com
+    lic : license-code # see credits.yml
+
+# If you want to make a statement about other images not credited, such as your
+# blog pictures.
+other-image-credit: |
+  All other images are public domain. Although, gimme a shout
+  if you want to share the blog photos of my friends and family. 👪
 
 # Any other site-specific things you'd rather have .gitexcluded
 # ...
