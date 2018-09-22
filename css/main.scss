@@ -656,8 +656,19 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 
 		&.styleN {
-			color: _palette(accent1, bg);
 			font-size: _font(hdr-size-xxlarge);
+			&.Nvar0 {
+				color: _palette(accent7, fg-light);
+			}
+			&.Nvar1 {
+				color: _palette(accent7, fg-light);
+			}
+			&.Nvar2 {
+				color: _palette(accent7, fg-light);
+			}
+			&.Nvar3 {
+				color: _palette(accent6, bg);
+			}
 		}
 	}
 
@@ -1402,6 +1413,27 @@ $baseurl: '{{ site.baseurl }}/images';
 						tr {
 							td {
 								border-color: _palette($p, border);
+
+								&.Nvar0 {
+									border-color: _palette(accent3, border);
+									color: _palette(accent7, fg);
+									background-color: _palette(accent3, bg);
+								}
+								&.Nvar1 {
+									border-color: _palette(accent2, border);
+									color: _palette(accent7, fg);
+									background-color: _palette(accent2, bg);
+								}
+								&.Nvar2 {
+									border-color: _palette(accent7, border2);
+									color: _palette(accent7, fg-bold);
+									background-color: _palette(accent7, border);
+								}
+								&.Nvar3 {
+									border-color: _palette(accent6, bg);
+									color: black; /*_palette(accent6, fg-bold);*/
+									background-color: _palette(accent6, fg-light);
+								}
 							}
 						}
 					}
