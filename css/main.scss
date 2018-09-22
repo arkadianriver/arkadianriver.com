@@ -117,8 +117,29 @@ $baseurl: '{{ site.baseurl }}/images';
 		}
 	}
 
-	h2 {
+	article header h1 {
 		font-size: _font(hdr-size-xlarge);
+		line-height: 1.75em;
+
+		@include breakpoint(small) {
+			font-size: _font(hdr-size-mlarge);
+			line-height: 1.65em;
+		}
+	}
+
+	article section .inner h1 {
+		font-size: _font(hdr-size-xlarge);
+		line-height: 1.95em;
+		color: _palette(accent7, fg);
+
+		@include breakpoint(small) {
+			font-size: _font(hdr-size-mlarge);
+			line-height: 1.85em;
+		}
+	}
+
+	h2 {
+		font-size: _font(hdr-size-mlarge);
 		line-height: 1.75em;
 
 		@include breakpoint(small) {
@@ -372,7 +393,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		&.major {
 			margin: 0 0 (_size(element-margin) * 1.75) 0;
 
-			h2, h3, h4, h5, h6 {
+			h1, h2, h3, h4, h5, h6 {
 				border-bottom: solid 2px _palette(border);
 				display: inline-block;
 				padding-bottom: 1em;
@@ -1265,7 +1286,7 @@ $baseurl: '{{ site.baseurl }}/images';
 				}
 
 				&.major {
-					h2, h3, h4, h5, h6 {
+					h1, h2, h3, h4, h5, h6 {
 						border-color: _palette($p, border);
 					}
 
@@ -1763,12 +1784,13 @@ $baseurl: '{{ site.baseurl }}/images';
 		position: relative;
 		text-align: center;
 
-		h2 {
+		h1 {
 			@include vendor('transform', 'scale(1)');
 //		@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
 			@include vendor('transition', ('transform 0.2s ease', 'opacity 0.2s ease'));
 			display: inline-block;
 			font-size: 1.75em;
+			line-height: 1.75em;
 			opacity: 1;
 			padding: 0.35em 1em;
 			position: relative;
@@ -1867,7 +1889,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			height: auto;
 			min-height: 0;
 
-			h2 {
+			h1 {
 				font-size: 1.25em;
 			}
 
@@ -1883,7 +1905,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 	body.is-loading {
 		#banner {
-			h2 {
+			h1 {
 				@include vendor('transform', 'scale(0.95)');
 				opacity: 0;
 
@@ -1956,7 +1978,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		> header {
 			text-align: center;
 
-			h2 {
+			h1, h2 {
 				font-size: _font(hdr-size-xxlarge);
 				margin: 0 0 (_size(element-margin) * 0.25) 0;
 			}
@@ -1980,7 +2002,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			background: _palette(accent7, bg);
 			text-align: left;
 
-			h2 {
+			h1, h2 {
 				font-size: _font(hdr-size-xxlarge);
 				margin: 0;
 				color: _palette(accent7, fg);
@@ -2009,7 +2031,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			background-size: cover;
 			text-align: center;
 
-			h2 {
+			h1, h2 {
 				font-size: _font(hdr-size-xxlarge);
 				margin: 0 0 (_size(element-margin) * 0.25) 0;
 			}
@@ -2040,7 +2062,7 @@ $baseurl: '{{ site.baseurl }}/images';
 			@include breakpoint(small) {
 				@include padding(3em, 3em);
 
-				h2 {
+				h1, h2 {
 					font-size: _font(hdr-size-mlarge);
 					margin: 0 0 (_size(element-margin) * 0.5) 0;
 				}
@@ -2158,6 +2180,11 @@ $baseurl: '{{ site.baseurl }}/images';
 				background-color: darken(_palette(bg), 8);
 			}
 		}
+	}
+
+/* font variant */
+	.ui {
+		font-family: _font(ctrl-family);
 	}
 
 /* tags */
