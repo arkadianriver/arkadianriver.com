@@ -62,7 +62,7 @@ preview how your site looks and functions, and properly view the theme's User Gu
 1. Test and publish your site:
 
    If you're building your site on Windows (like me) you can use the `site.bat` file;
-   otherwise, just use the jekyll commands as indicated in the site command reference below.
+   otherwise, just use the Jekyll commands as indicated in the site command reference below.
    
    If you use WinSCP to sync with your remote site, you can use the _publish_ option.
    To publish with WinSCP, set up a `_site.env` file as described in the comments of `site.bat`,
