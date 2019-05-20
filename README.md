@@ -1,14 +1,14 @@
-# arkadianriver.com
+# spaceappsmke.org
 
-My personal web site, using the awesome design of http://html5up.net/spectral by
+Space Apps MKE website using http://html5up.net/spectral by
 the talented [@ajlkn](http://twitter.com/ajlkn).
 
-I morphed that design into this Jekyll [theme](#theme-note) for blog and portfolio entries.
+He morphed the design into this Jekyll [theme](#theme-note) for blog and portfolio entries.
 [Jekyll](https://jekyllrb.com) is a static site generator, which
 uses templates to generate all the publishable content as static
 HTML files (as opposed to something like WordPress, which has files that pull
 data from a database at runtime).
-This repo is the exact same code I use for my site (excluding my posts and
+This repo is the exact same code he used for his site (excluding my posts and
 some data files created from templates where noted).
 
 - [Features](https://arkadianriver.github.io/arkadianriver.com/topics/user-guide/features.html)
@@ -19,7 +19,7 @@ some data files created from templates where noted).
 You can clone or fork this repo as a [theme](#theme-note) for your own blog.
 Because it doesn't use any plugins, you can easily
 [host it on GitHub Pages](https://jekyllrb.com/docs/github-pages/#deploying-jekyll-to-github-pages).
-Even so, I recommend cloning your fork locally to create and preview your posts,
+Even so, he recommends cloning your fork locally to create and preview your posts,
 regardless of where you choose to publish.
 
 With it downloaded and with Ruby, RubyGems, and Jekyll 3.1.2 or higher installed, you can use the post-creation script,
