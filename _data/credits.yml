@@ -46,6 +46,10 @@ licenses:
 # 'lic' values correspond to the keys in the license hash above
 # 
 creds:
+  - for : Site Build and Fork for Space Apps MKE
+    by  : '@romked'
+    url : http://romkedehaan.com
+    lic : ccb3
   - for : Design and theme
     by  : '@ajlkn'
     url : http://html5up.net/spectral
@@ -103,16 +107,16 @@ other-image-credit: All other images are public domain.
 # 'lic' values correspond to the keys in the license hash above
 #
 image-credit:
-  - src : /images/caustic_light.jpg
-    by  : fdecomite
-    url : https://www.flickr.com/photos/fdecomite/1907376527/
+  - src : /images/pic01.jpg
+    by  : Klemen Vrankar
+    url : https://www.unsplash.com/
     lic : ccb2
-  - src : /images/flickr-froderik.jpg
-    by  : froderik
-    url : https://www.flickr.com/photos/froderik/9355090806/
+  - src : /images/pic02.jpg
+    by  : Nasa
+    url : https://www.unsplash.com/
     lic : ccbsa2
   - src : /images/banner.jpg
-    by  : Konstaninos Dafallas
-    url : https://www.flickr.com/photos/72906133@N00/4011647045/
+    by  : Nasa
+    url : https://www.nasa.com/
     lic : ccb2
 
