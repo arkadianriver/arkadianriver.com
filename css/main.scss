@@ -1406,7 +1406,7 @@ $baseurl: '{{ site.baseurl }}/images';
     // Post listing
     
       .post-list {
-    		margin: 0;
+				margin: 0;
     		/* width: 100%; */
     		text-align: left;
     		vertical-align: top;
@@ -1418,7 +1418,7 @@ $baseurl: '{{ site.baseurl }}/images';
     			display: inline-block;
     			/* width: 240px; */
     			list-style: none;
-					margin: 0.5em;
+					margin: 0.25em 0 0.5em 0.5em;
     			padding: 0;
     			/*
     			&:first-child {
