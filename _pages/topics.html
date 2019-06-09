@@ -15,7 +15,7 @@ background-image: pic01.jpg
   <ul class="post-list">{%
         for post in site.categories.topics %}{%
           if post.tags contains "featured" %}
-      <li>
+      <li class="2u 12u(medium)">
         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
           <div class="container">
             <p class="post-title">{{ post.title }}</p>
