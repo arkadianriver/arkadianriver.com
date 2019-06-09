@@ -1465,7 +1465,9 @@ $baseurl: '{{ site.baseurl }}/images';
 						text-overflow: ellipsis;
     			}
     			.container {
-    				background: transparent; /* _palette($p, border2-bg); */
+						@include vendor('appearance', 'none');
+						@include vendor('transition', ('background-color #{_duration(transitions)} ease-in-out', 'color #{_duration(transitions)} ease-in-out'));
+						background: transparent; /* _palette($p, border2-bg); */
     				/* box-shadow: 1px 1px _palette($p, border2); */
     				/* width: 240px; */
 						height: 6.5em;
