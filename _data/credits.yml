@@ -30,6 +30,10 @@ licenses:
     name : Creative Commons Attribution-NonCommercial 2.0 Generic
     icon :
     url  : https://creativecommons.org/licenses/by-nc/2.0/
+  ccbncnd2:
+    name : Creative Commons Attribution-NonCommercial-NoDerivs 2.0 Generic
+    icon :
+    url  : https://creativecommons.org/licenses/by-nc-nd/2.0/
   ccbncsa2:
     name : Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic
     icon :
