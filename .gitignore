@@ -11,7 +11,7 @@ _site.env
 _my/
 _includes/_my
 _layouts/_my
-Gemfile.lock
+Gemfile*.lock
 
 # Windows image file caches
 Thumbs.db
