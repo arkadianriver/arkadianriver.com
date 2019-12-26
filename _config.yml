@@ -11,10 +11,10 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: _site name_
+title: _yzxx_
 description: _description_
 owner:
-  name: _your name_ # or company name
+  name: _hhh_ # or company name
   url: "http://example.com" # your URL
 first_published: 2010 # if migrating another site, the year of your first publish
                       # Must be a 4-digit integer year (math is used on it)
@@ -39,7 +39,7 @@ social:
   twitter: https://twitter.com/_username_
   github: https://github.com/_username_
   linkedin-square: https://linkedin.com/in/_username_
-  facebook-official: https://facebook.com/_username_
+  facebook-official: https://facebook.com/_username_123
   google-plus-square: https://plus.google.com/u/0/+_username_
   email: /contact/ # you can configure and use this contact page or use your email addy
   #flickr:
