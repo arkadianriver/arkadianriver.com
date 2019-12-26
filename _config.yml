@@ -11,10 +11,10 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: _yzxx_
+title: 一只小熊
 description: _description_
 owner:
-  name: _hhh_ # or company name
+  name: 哆啦A梦 # or company name
   url: "http://example.com" # your URL
 first_published: 2010 # if migrating another site, the year of your first publish
                       # Must be a 4-digit integer year (math is used on it)
@@ -28,11 +28,11 @@ lang: en-us # used in HTML lang attributes
 # on landing page
 # - set the greeting only if you want to display the first green section
 greeting:
-  title: _Your greeting_  
+  title: 家 
   text: _Your detailed greeting text_
 # - displayed at the bottom
-closing-head: _Your closing_
-closing-para: _Your detailed closing_
+closing-head: 123
+closing-para: 456
 
 # on all pages (and the first three you list display with greeting, if included)
 social:
