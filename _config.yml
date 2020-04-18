@@ -11,8 +11,8 @@
 # (Using that method instead of site.owner, in case your posts get cloned with your repo.)
 
 # Site settings
-title: _site name_
-description: _description_
+title: Demo
+description: Negocios Inmobiliarios
 owner:
   name: _your name_ # or company name
   url: "http://example.com" # your URL
@@ -28,7 +28,7 @@ lang: en-us # used in HTML lang attributes
 # on landing page
 # - set the greeting only if you want to display the first green section
 greeting:
-  title: _Your greeting_  
+  title: Hello 
   text: _Your detailed greeting text_
 # - displayed at the bottom
 closing-head: _Your closing_
