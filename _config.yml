@@ -60,6 +60,3 @@ twitter_url: https://twitter.com/pydataosaka
 markdown: kramdown
 
 destination: ./build
-
-plugins:
-  - jekyll-sitemap
