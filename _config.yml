@@ -1,130 +1,65 @@
-# Welcome to Jekyll!
-
-
-# In addition to these settings, there is a file _data/tokens-template.yml
-# that you'll want to customize for your site. It's named 'tokens' because
-# that was it's original purpose, but because tokens.yml is .gitexcluded, it's
-# a good place to store your site-specific data that you'd rather not have
-# forked or cloned. Of course, that means you'd want to back it up elsewhere.
-
-# Also, for your post bylines, add author info for yourself in `_data/authors.yml`.
-# (Using that method instead of site.owner, in case your posts get cloned with your repo.)
-
 # Site settings
-title: _site name_
-description: _description_
-owner:
-  name: _your name_ # or company name
-  url: "http://example.com" # your URL
-first_published: 2010 # if migrating another site, the year of your first publish
-                      # Must be a 4-digit integer year (math is used on it)
-url: "http://example.com" # the base hostname & protocol for this site
+title: PyData Osaka
+description:
+  大阪のPython科学技術スタックのユーザーと開発者のコミュニティ
+
 baseurl: "" # the subpath of your site, e.g. /blog
-            # Note you'll have to move your robots.txt to the root if you want it used.
-            # And list multiple sitemaps if there are other subdirectories you want indexed
-            # besides this blog.
-lang: en-us # used in HTML lang attributes
+url: "https://osaka.pydata.org" # the base hostname & protocol for your site
 
-# on landing page
-# - set the greeting only if you want to display the first green section
+
+future: true
+
+tickets_url: https://www.eventbrite.com/e/pydata-eindhoven-2020-tickets-117358340957
+schedule_url: https://pydata.org/eindhoven2020/schedule/
+cfp_url:
+
+dates:
+location:
+
 greeting:
-  title: _Your greeting_  
-  text: _Your detailed greeting text_
-# - displayed at the bottom
-closing-head: _Your closing_
-closing-para: _Your detailed closing_
+  title: About PyData
+  text:
+    PyData is an educational program of NumFOCUS, a 501(c)3 non-profit organization in the United States.
+    PyData provides a forum for the international community of users and developers of data analysis tools to
+    share ideas and learn from each other.<br /><br />
 
-# on all pages (and the first three you list display with greeting, if included)
+    The global PyData network promotes discussion of best practices, new approaches,
+    and emerging technologies for data management, processing, analytics, and visualization.
+    PyData communities approach data science using many languages, including (but not limited to) Python, Julia, and R.<br /><br />
+
+    The PyData Code of Conduct governs this conference. To discuss any issues or concerns relating to the code of
+    conduct or the behavior of anyone at a PyData conference (or meetup), please contact NumFOCUS Executive Director 
+    Leah Silen (+1 512-222-5449; leah@numfocus.org ) or the local organisers at eindhoven@pydata.org.
+
 social:
-  twitter: https://twitter.com/_username_
-  github: https://github.com/_username_
-  linkedin-square: https://linkedin.com/in/_username_
-  facebook-official: https://facebook.com/_username_
-  #google-plus-square: https://plus.google.com/u/0/+_username_
-  email: /contact/ # you can configure and use this contact page or use your email addy
-  #flickr:
-  #instagram:
-  #youtube-square:
-  #spotify:
-  #stack-overflow:
-  #vimeo:
-  #reddit:
-  #stubleupon:
-  #delicious:
-  #pied-piper:
-  #digg:
-  #soundcloud:
-  #deviantart:
-  #angellist:
-  #tumblr-square:
-  #stackexchange:
-  #weibo:
-  #trello:
-  #foursquare:
-  #linux:
-  #bitbucket-square:
-  #vk:
-  #slack:
-  #vine:
-  #weixin:
-  #yelp:
-  #skyatlas:
-  #leanpub:
-  #connectdevelop:
-  #ils:
-  #forumbee:
-  #tripadvisor:
-  #amazon:
+  twitter: https://twitter.com/pydataosaka
+  github: https://github.com/pydataosaka
 
-# - title for your blog's featured posts
-features-title: Featured topics
+# Homepage tiles
+tiles-source: posts # accepts "posts" or "pages"
+tiles-count: 3
 
-# if you use this repo's `ruby compose.rb` script to initiate new posts, put the
-# command to invoke your editor here. (I didn't spend time dealing with spaces
-# and full paths of the various OSes in compose.rb. For my Windows
-# environment, I just put a subl.cmd file in my PATH that points to the full
-# path to Sublime's subl.exe.) Also, put your most common post extension.
-compose:
-  editor: subl
-  extension: md
+include: ['_pages']
 
-# choose where to put back and next links:
-# top, bottom, both, none
-navlinks: bottom
+# Misc settings
+featured-image-source:
 
-# expecting more works? mark your list as in-progress
-works_in_progress: yes
-
-# Github pages posts future posts by default.
-# You'll want to move the user guide posts to _drafts if you set this to true.
-future: false
-
-# If you have custom extensions, specifically includes/_my/custom.scss,
-# set this to yes
-custom_extensions: no
+# Social settings
+500px_url:
+facebook_url:
+github_url: https://github.com/pydataosaka
+gitlab_url:
+googleplus_url:
+instagram_url:
+linkedin_url:
+pinterest_url:
+slack_url:
+twitter_url: https://twitter.com/pydataosaka
 
 # Build settings
-permalink: /:categories/:title.html
 markdown: kramdown
-#sass:
-#  style: compressed
-exclude: ['site.bat','compose.rb','README.md']
-include: ['_pages','.htaccess']
-defaults:
-  - scope:
-      path: _pages
-    values:
-      layout: page
-      #permalink: /:slug/ # dunna work. See github.com/jekyll/jekyll/issues/2280
-  - scope:
-      path: _posts
-    values:
-      layout: post
-  - scope:
-      path: _drafts
-    values:
-      layout: post
 
-# to initialize arrays in assignments (assign myarr = site.empty_array)
-# (easier to grok than assign myarr = '' | split',')
-empty_array: []
+destination: ./build
+
+plugins:
+  - jekyll-sitemap
