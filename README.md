@@ -1,6 +1,7 @@
 # arkadianriver.com
 
-My old personal web site up to 2023, which uses the awesome design of http://html5up.net/spectral by
+Until Aug 2023, this was the theme for my personal web site.
+It uses the awesome design of http://html5up.net/spectral by
 the talented [@ajlkn](http://twitter.com/ajlkn).
 
 I morphed that design into this Jekyll [theme](#theme-note) for blog and portfolio entries.
